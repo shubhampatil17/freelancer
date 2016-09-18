@@ -17,12 +17,12 @@ public class ClosedHashingWithDoubleHashing implements HashingMethod {
 
         int hashMultiplier = 1;
 
-        int initialHashIndex = abs(primaryHashFunction(employee) + hashMultiplier*secondaryHashFunction(employee)) % SIZE_OF_HASH_TABLE;
+        int initialHashIndex = abs(primaryHashFunction(employee)) % SIZE_OF_HASH_TABLE;
         int nextHashIndex = initialHashIndex;
 
         while(hashTable[nextHashIndex] != null){
-            hashMultiplier++;
             nextHashIndex = abs(primaryHashFunction(employee) + hashMultiplier*secondaryHashFunction(employee)) % SIZE_OF_HASH_TABLE;
+            hashMultiplier++;
         }
 
         hashTable[nextHashIndex] = employee;
@@ -39,7 +39,7 @@ public class ClosedHashingWithDoubleHashing implements HashingMethod {
 
         Employee employee = new Employee(employeeId);
 
-        int initialHashIndex = abs(primaryHashFunction(employee) + hashMultiplier*secondaryHashFunction(employee)) % SIZE_OF_HASH_TABLE;
+        int initialHashIndex = abs(primaryHashFunction(employee)) % SIZE_OF_HASH_TABLE;
         int nextHashIndex = initialHashIndex;
 
         if (hashTable[nextHashIndex] == null){
@@ -51,9 +51,9 @@ public class ClosedHashingWithDoubleHashing implements HashingMethod {
         while( !(hashTable[nextHashIndex].equals(employee)) ){
 
             numberOfComparisons++;
-            hashMultiplier++;
 
             nextHashIndex = abs(primaryHashFunction(employee) + hashMultiplier*secondaryHashFunction(employee)) % SIZE_OF_HASH_TABLE;
+            hashMultiplier++;
 
             if((nextHashIndex == initialHashIndex) || (hashTable[nextHashIndex] == null)){
                 System.out.println("Employee " + employee.getEmployeeId() + " not found ! " +
