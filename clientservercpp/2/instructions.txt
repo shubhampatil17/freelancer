@@ -1,0 +1,9 @@
+For sender process:
+
+1) g++ sender.cpp -o sender -lrt
+2) ./sender <filename>
+
+For receiver process:
+
+1) g++ receiver.cpp -o receiver -lrt
+2) ./receiver <filename>

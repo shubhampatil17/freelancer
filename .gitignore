@@ -1,0 +1,22 @@
+*.class
+
+#eclipse
+bin
+.settings
+.classpath
+.project
+
+#python venv
+venv
+
+#intellij
+.idea
+/out/
+*.iml
+
+#gradle
+gradle
+.gradle
+build
+gradlew
+gradle.bat

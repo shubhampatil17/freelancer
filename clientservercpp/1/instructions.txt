@@ -1,0 +1,9 @@
+For shm1.cpp :
+
+1) g++ shm1.cpp -o shm1 -lrt -std=c++11
+2) ./shm1
+
+For shm2.cpp :
+
+1) g++ shm2.cpp -o shm2 -lrt -std=c++11
+2) ./shm2
