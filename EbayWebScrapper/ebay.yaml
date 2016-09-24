@@ -1,0 +1,13 @@
+name: ebay_api_config
+
+# Trading API - https://www.x.com/developers/ebay/products/trading-api
+api.ebay.com:
+    compatability: 719
+    appid: YOUR APPID
+    certid: YOUR CERTID
+    devid: YOUR DEVID
+    token: USER TOKEN
+
+# Finding API - https://www.x.com/developers/ebay/products/finding-api
+svcs.ebay.com:
+    appid: YOUR APPID
