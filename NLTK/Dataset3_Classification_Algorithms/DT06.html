@@ -1,0 +1,2535 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://en.wikipedia.org/wiki/Gradient_boosting -->
+<html class="client-js ve-not-available" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Gradient boosting - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Gradient_boosting","wgTitle":"Gradient boosting","wgCurRevisionId":743675770,"wgRevisionId":743675770,"wgArticleId":26649339,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Decision trees","Ensemble learning"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Gradient_boosting","wgRelevantArticleId":26649339,"wgRequestId":"WANJUApAADkAAPGek-QAAABO","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikibaseItemId":"Q5591907","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","ext.visualEditor.desktopArticleTarget.init","ext.uls.interface","ext.quicksurveys.init","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./DT06_files/load.php">
+<script async="" src="./DT06_files/load(1).php"></script>
+<style>
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-right:10px solid #c9c9c9;border-bottom:10px solid transparent;display:inline-block;left:-11px; top:17px;position:absolute}.uls-menu.callout .caret-after{border-right:10px solid #fcfcfc;display:inline-block;left:-10px}.uls-menu.callout--languageselection .caret-after{border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient( transparent,transparent ),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-image:linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714)!ie;background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+.ext-quick-survey-panel,.ext-qs-loader-bar{width:auto;background-color:#eeeeee} .ext-qs-loader-bar{display:block;height:100px;margin-left:1.4em;clear:right;float:right;background-color:#eeeeee}.ext-qs-loader-bar.mw-ajax-loader{top:0}@media all and (min-width:720px){.ext-qs-loader-bar,.ext-quick-survey-panel{margin-left:1.4em;width:300px;clear:right;float:right}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.cite-accessibility-label{ top:-99999px;clip:rect( 1px 1px 1px 1px ); clip:rect( 1px,1px,1px,1px ); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gear_icon.svg/24px-Gear_icon.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/7/77/Gear_icon.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}</style><style>
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{  pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; opacity:0.5}.ve-activated .catlinks{cursor:pointer}.ve-activated .catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./DT06_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.28.0-wmf.22">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Gradient_boosting">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Gradient_boosting">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="./DT06_files/load(3).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Gradient_boosting rootpage-Gradient_boosting skin-vector action-view feature-footer-v2">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Gradient boosting</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://en.wikipedia.org/wiki/Gradient_boosting#mw-head">navigation</a>, 					<a href="https://en.wikipedia.org/wiki/Gradient_boosting#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><b>Gradient boosting</b> is a <a href="https://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">machine learning</a> technique for <a href="https://en.wikipedia.org/wiki/Regression_(machine_learning)" class="mw-redirect" title="Regression (machine learning)">regression</a> and <a href="https://en.wikipedia.org/wiki/Classification_(machine_learning)" class="mw-redirect" title="Classification (machine learning)">classification</a> problems, which produces a prediction model in the form of an <a href="https://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">ensemble</a> of weak prediction models, typically <a href="https://en.wikipedia.org/wiki/Decision_tree_learning" title="Decision tree learning">decision trees</a>. It builds the model in a stage-wise fashion like other <a href="https://en.wikipedia.org/wiki/Boosting_(meta-algorithm)" class="mw-redirect" title="Boosting (meta-algorithm)">boosting</a> methods do, and it generalizes them by allowing optimization of an arbitrary <a href="https://en.wikipedia.org/wiki/Differentiable_function" title="Differentiable function">differentiable</a> <a href="https://en.wikipedia.org/wiki/Loss_function" title="Loss function">loss function</a>.</p>
+<p>The idea of gradient boosting originated in the observation by <a href="https://en.wikipedia.org/wiki/Leo_Breiman" title="Leo Breiman">Leo Breiman</a><sup id="cite_ref-Breiman1997_1-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Breiman1997-1">[1]</a></sup> that boosting can be interpreted as an optimization algorithm on a suitable cost function. Explicit regression gradient boosting algorithms were subsequently developed by <a href="https://en.wikipedia.org/wiki/Jerome_H._Friedman" title="Jerome H. Friedman">Jerome H. Friedman</a><sup id="cite_ref-Friedman1999a_2-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Friedman1999a-2">[2]</a></sup><sup id="cite_ref-Friedman1999b_3-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Friedman1999b-3">[3]</a></sup> simultaneously with the more general functional gradient boosting perspective of Llew Mason, Jonathan Baxter, Peter Bartlett and Marcus Frean.<sup id="cite_ref-MasonBaxterBartlettFrean1999a_4-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-MasonBaxterBartlettFrean1999a-4">[4]</a></sup><sup id="cite_ref-MasonBaxterBartlettFrean1999b_5-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-MasonBaxterBartlettFrean1999b-5">[5]</a></sup> The latter two papers introduced the abstract view of boosting algorithms as iterative <i>functional gradient descent</i> algorithms. That is, algorithms that optimize a cost <i>function</i> over function space by iteratively choosing a function (weak hypothesis) that points in the negative gradient direction. This functional gradient view of boosting has led to the development of boosting algorithms in many areas of machine learning and statistics beyond regression and classification.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Informal_introduction"><span class="tocnumber">1</span> <span class="toctext">Informal introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Algorithm"><span class="tocnumber">2</span> <span class="toctext">Algorithm</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Gradient_tree_boosting"><span class="tocnumber">3</span> <span class="toctext">Gradient tree boosting</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Size_of_trees"><span class="tocnumber">3.1</span> <span class="toctext">Size of trees</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Regularization"><span class="tocnumber">4</span> <span class="toctext">Regularization</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Shrinkage"><span class="tocnumber">4.1</span> <span class="toctext">Shrinkage</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Stochastic_gradient_boosting"><span class="tocnumber">4.2</span> <span class="toctext">Stochastic gradient boosting</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Number_of_observations_in_leaves"><span class="tocnumber">4.3</span> <span class="toctext">Number of observations in leaves</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Penalize_Complexity_of_Tree"><span class="tocnumber">4.4</span> <span class="toctext">Penalize Complexity of Tree</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Usage"><span class="tocnumber">5</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#Names"><span class="tocnumber">6</span> <span class="toctext">Names</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Informal_introduction">Informal introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=1" title="Edit section: Informal introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>(This section follows the exposition of gradient boosting by Li.<sup id="cite_ref-6" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-6">[6]</a></sup>)</p>
+<p>Like other boosting methods, gradient boosting combines weak learners into a single strong learner, in an iterative fashion. It is easiest to explain in the least-squares <a href="https://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">regression</a> setting, where the goal is to learn a model <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/545fd099af8541605f7ee55f08225526be88ce57" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.751ex; height:2.176ex;" alt="F"></span> that predicts values <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>y</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {y}}=F(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/ad1ceaa8141c3c194c685cac4d222e286d88e1e6" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:9.343ex; height:2.843ex;" alt="\hat{y} = F(x)"></span>, minimizing the <a href="https://en.wikipedia.org/wiki/Mean_squared_error" title="Mean squared error">mean squared error</a> <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>y</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>−<!-- − --></mo>
+        <mi>y</mi>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle ({\hat {y}}-y)^{2}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/6817c14ac905d6259ccf95c04d9576dde882cbcc" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:8.221ex; height:3.176ex;" alt="(\hat{y} - y)^2"></span> to the true values <span class="texhtml mvar" style="font-style:italic;">y</span> (averaged over some training set).</p>
+<p>At each stage <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mn>1</mn>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>m</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>M</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 1\leq m\leq M}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/180b134ce5f780b4dc77bedbcc7e37a0e7b39260" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:11.894ex; height:2.509ex;" alt="1 \le m \le M"></span> of gradient boosting, it may be assumed that there is some imperfect model <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/afc15d41d3176d0fb9b4474762c53d49add76fbf" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:3.187ex; height:2.509ex;" alt="F_m"></span> (at the outset, a very weak model that just predicts the mean <span class="texhtml mvar" style="font-style:italic;">y</span> in the training set could be used). The gradient boosting algorithm does not change <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/afc15d41d3176d0fb9b4474762c53d49add76fbf" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:3.187ex; height:2.509ex;" alt="F_m"></span> in any way; instead, it improves on it by constructing a new model that adds an estimator <span class="texhtml mvar" style="font-style:italic;">h</span> to provide a better model <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>h</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m+1}(x)=F_{m}(x)+h(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/71763b3f4f7524fed7836433b33c7a3bdc1ccab4" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:25.31ex; height:2.843ex;" alt="F_{m+1}(x) = F_m(x) + h(x)"></span>. The question is now, how to find <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/b26be3e694314bc90c3215047e4a2010c6ee184a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.349ex; height:2.176ex;" alt="h"></span>? The gradient boosting solution starts with the observation that a perfect <span class="texhtml mvar" style="font-style:italic;">h</span> would imply</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>h</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>y</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m+1}(x)=F_{m}(x)+h(x)=y}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/42940917117b12ff21c2c936bfef526a6cb62779" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:29.585ex; height:2.843ex;" alt="{\displaystyle F_{m+1}(x)=F_{m}(x)+h(x)=y}"></span></dd>
+</dl>
+<p>or, equivalently,</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>y</mi>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h(x)=y-F_{m}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/0190d9401eba2ab598f747b6c6b19bf023a30545" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:18.003ex; height:2.843ex;" alt="
+h(x) = y - F_m(x)
+"></span>.</dd>
+</dl>
+<p>Therefore, gradient boosting will fit <span class="texhtml mvar" style="font-style:italic;">h</span> to the <i>residual</i> <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>y</mi>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle y-F_{m}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/e8cb01b82cfae01caa755f9a25ead42d05225e81" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:10.375ex; height:2.843ex;" alt="y - F_m(x)"></span>. Like in other boosting variants, each <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m+1}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/f79d37287d73b20d8cab41477cda062c8b9e8912" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:5.303ex; height:2.509ex;" alt="F_{m+1}"></span> learns to correct its predecessor <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/afc15d41d3176d0fb9b4474762c53d49add76fbf" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:3.187ex; height:2.509ex;" alt="F_m"></span>. A generalization of this idea to other loss functions than squared error (and to classification and ranking problems) follows from the observation that residuals <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>y</mi>
+        <mo>−<!-- − --></mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle y-F(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/b0fb4ed3fffe74d1bf60dcc33e024a90b94a26de" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:8.938ex; height:2.843ex;" alt="y - F(x)"></span> are the negative gradients of the squared error loss function <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>2</mn>
+          </mfrac>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>y</mi>
+        <mo>−<!-- − --></mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {1}{2}}(y-F(x))^{2}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/bc6e4ffcd4a3d54c52b2260fbc776e2928a7009b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:13.839ex; height:5.176ex;" alt="\frac{1}{2}(y - F(x))^2"></span>. So, gradient boosting is a <a href="https://en.wikipedia.org/wiki/Gradient_descent" title="Gradient descent">gradient descent</a> algorithm; and generalizing it entails "plugging in" a different loss and its gradient.</p>
+<h2><span class="mw-headline" id="Algorithm">Algorithm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=2" title="Edit section: Algorithm">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In many <a href="https://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">supervised learning</a> problems one has an output variable <span class="texhtml mvar" style="font-style:italic;">y</span> and a vector of input variables <span class="texhtml mvar" style="font-style:italic;">x</span> connected together via a <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution" title="Joint probability distribution">joint probability distribution</a> <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>P</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>,</mo>
+        <mi>y</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle P(x,y)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/d5b3d8f37f5458c22b61eaf26e5af0523acb63e2" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:7.137ex; height:2.843ex;" alt="P(x,y)"></span>. Using a training set <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \{(x_{1},y_{1}),\dots ,(x_{n},y_{n})\}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/1805d7245b2f223e2323f78f5e9f353e38f8cffb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:22.859ex; height:2.843ex;" alt="\{(x_{1},y_{1}),\dots ,(x_{n},y_{n})\}"></span> of known values of <span class="texhtml mvar" style="font-style:italic;">x</span> and corresponding values of <span class="texhtml mvar" style="font-style:italic;">y</span>, the goal is to find an approximation <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>F</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {F}}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/9dd32eef5572ac89f3a31f9f0c54a2c7b070d90c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.986ex; height:3.343ex;" alt="\hat{F}(x)"></span> to a function <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msup>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo>∗<!-- ∗ --></mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F^{*}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/00f62e21ff941c4d12119df1b8e1a27a1eb3fef1" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.057ex; height:2.843ex;" alt="F^*(x)"></span> that minimizes the expected value of some specified <a href="https://en.wikipedia.org/wiki/Loss_function" title="Loss function">loss function</a> <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <mi>y</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle L(y,F(x))}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/7da73aa7583b8fa4bb3729fbe01cbf42a5eacb8d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:10.555ex; height:2.843ex;" alt="L(y, F(x))"></span>:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>F</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow>
+              <mi>arg</mi>
+              <mo>⁡<!-- ⁡ --></mo>
+              <mo movablelimits="true" form="prefix">min</mo>
+            </mrow>
+            <mi>F</mi>
+          </munder>
+        </mrow>
+        <mspace width="thinmathspace"></mspace>
+        <msub>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi mathvariant="double-struck">E</mi>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>y</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">[</mo>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <mi>y</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {F}}={\underset {F}{\arg \min }}\,\mathbb {E} _{x,y}[L(y,F(x))]}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/655597bea9c34023b858924a1cf23b177042291c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:28.773ex; height:5.009ex;" alt="{\displaystyle {\hat {F}}={\underset {F}{\arg \min }}\,\mathbb {E} _{x,y}[L(y,F(x))]}"></span>.</dd>
+</dl>
+<p>Gradient boosting method assumes a real-valued <i>y</i> and seeks an approximation <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>F</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {F}}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/9dd32eef5572ac89f3a31f9f0c54a2c7b070d90c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.986ex; height:3.343ex;" alt="\hat{F}(x)"></span> in the form of a weighted sum of functions <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h_{i}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/8a3787e58305d774791b394ed67b1690f8ec6e41" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.327ex; height:2.843ex;" alt="h_i (x)"></span> from some class ℋ, called base (or weak) learners:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>M</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtext>const</mtext>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(x)=\sum _{i=1}^{M}\gamma _{i}h_{i}(x)+{\mbox{const}}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/c1c4a63d9c924d47c0dd85e22def6ad5ad5b9246" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:27.343ex; height:7.343ex;" alt="F(x)=\sum _{{i=1}}^{M}\gamma _{i}h_{i}(x)+{\mbox{const}}"></span>.</dd>
+</dl>
+<p>In accordance with the <a href="https://en.wikipedia.org/wiki/Empirical_risk_minimization" title="Empirical risk minimization">empirical risk minimization</a> principle, the method tries to find an approximation <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>F</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {F}}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/9dd32eef5572ac89f3a31f9f0c54a2c7b070d90c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.986ex; height:3.343ex;" alt="\hat{F}(x)"></span> that minimizes the average value of the loss function on the training set. It does so by starting with a model, consisting of a constant function <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{0}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/fa7b801804c1fd3f8e27dbfa5eaf7ae94e806fd0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.737ex; height:2.843ex;" alt="{\displaystyle F_{0}(x)}"></span>, and incrementally expanding it in a <a href="https://en.wikipedia.org/wiki/Greedy_algorithm" title="Greedy algorithm">greedy</a> fashion:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow>
+              <mi>arg</mi>
+              <mo>⁡<!-- ⁡ --></mo>
+              <mo movablelimits="true" form="prefix">min</mo>
+            </mrow>
+            <mi>γ<!-- γ --></mi>
+          </munder>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mi>γ<!-- γ --></mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{0}(x)={\underset {\gamma }{\arg \min }}\sum _{i=1}^{n}L(y_{i},\gamma )}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/6318893d26bb16381930874ef650f0828e55fb91" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:28.245ex; height:7.009ex;" alt="F_0(x) = \underset{\gamma}{\arg\min} \sum_{i=1}^n L(y_i, \gamma)"></span>,</dd>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow class="MJX-TeXAtom-OP">
+              <mi mathvariant="normal">a</mi>
+              <mi mathvariant="normal">r</mi>
+              <mi mathvariant="normal">g</mi>
+              <mspace width="thinmathspace"></mspace>
+              <mi mathvariant="normal">m</mi>
+              <mi mathvariant="normal">i</mi>
+              <mi mathvariant="normal">n</mi>
+            </mrow>
+            <mrow>
+              <mi>f</mi>
+              <mo>∈<!-- ∈ --></mo>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi class="MJX-tex-caligraphic" mathvariant="script">H</mi>
+                </mrow>
+              </mrow>
+            </mrow>
+          </munder>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}(x)=F_{m-1}(x)+{\underset {f\in {\mathcal {H}}}{\operatorname {arg\,min} }}\sum _{i=1}^{n}L(y_{i},F_{m-1}(x_{i})+f(x_{i}))}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/81c3af88e1f2509ee802f1b711b6279e3958da9d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:56.314ex; height:7.009ex;" alt="F_m(x) = F_{m-1}(x) + \underset{f \in \mathcal{H}}{\operatorname{arg\,min}} \sum_{i=1}^n L(y_i, F_{m-1}(x_i) + f(x_i))"></span>,</dd>
+</dl>
+<p>where <span class="texhtml mvar" style="font-style:italic;">f</span> is restricted to be a function from the class ℋ of base learner functions.</p>
+<p>However, the problem of choosing at each step the best <span class="texhtml mvar" style="font-style:italic;">f</span> for an arbitrary loss function <span class="texhtml mvar" style="font-style:italic;">L</span> is a hard optimization problem in general, and so we'll "cheat" by solving a much easier problem instead.</p>
+<p>The idea is to apply a <a href="https://en.wikipedia.org/wiki/Steepest_descent" class="mw-redirect" title="Steepest descent">steepest descent</a> step to this minimization problem. If we only cared about predictions at the points of the training set, and <span class="texhtml mvar" style="font-style:italic;">f</span> were unrestricted, we'd update the model per the following equation, where we view <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <mi>y</mi>
+        <mo>,</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle L(y,f)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/77cf84dc507000b8e35a9e6ec9bb984f7db98927" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.923ex; height:2.843ex;" alt="L(y, f)"></span> not as a function of <span class="texhtml mvar" style="font-style:italic;">f</span>, but as a function of a vector of values <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(x_{1}),\ldots ,f(x_{n})}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/b7b228be7b4ef4feeca30ab70b4c4302ffa3c28b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:16.416ex; height:2.843ex;" alt="{\displaystyle f(x_{1}),\ldots ,f(x_{n})}"></span>:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi mathvariant="normal">∇<!-- ∇ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>f</mi>
+          </mrow>
+        </msub>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}(x)=F_{m-1}(x)-\gamma _{m}\sum _{i=1}^{n}\nabla _{f}L(y_{i},F_{m-1}(x_{i})),}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/b53514e7fead18b33acc7827f167db6a829805e7" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:47.28ex; height:7.009ex;" alt="F_m(x) = F_{m-1}(x) - \gamma_m \sum_{i=1}^n \nabla_f L(y_i, F_{m-1}(x_i)),"></span></dd>
+</dl>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow>
+              <mi>arg</mi>
+              <mo>⁡<!-- ⁡ --></mo>
+              <mo movablelimits="true" form="prefix">min</mo>
+            </mrow>
+            <mi>γ<!-- γ --></mi>
+          </munder>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>L</mi>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>y</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mo>,</mo>
+          <msub>
+            <mi>F</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>m</mi>
+              <mo>−<!-- − --></mo>
+              <mn>1</mn>
+            </mrow>
+          </msub>
+          <mo stretchy="false">(</mo>
+          <msub>
+            <mi>x</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mo stretchy="false">)</mo>
+          <mo>−<!-- − --></mo>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mfrac>
+              <mrow>
+                <mi mathvariant="normal">∂<!-- ∂ --></mi>
+                <mi>L</mi>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>y</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>F</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>m</mi>
+                    <mo>−<!-- − --></mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow>
+                <mi mathvariant="normal">∂<!-- ∂ --></mi>
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>i</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+              </mrow>
+            </mfrac>
+          </mrow>
+          <mo>)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \gamma _{m}={\underset {\gamma }{\arg \min }}\sum _{i=1}^{n}L\left(y_{i},F_{m-1}(x_{i})-\gamma {\frac {\partial L(y_{i},F_{m-1}(x_{i}))}{\partial f(x_{i})}}\right).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/7d64365edf7dda8f2c32faccfe6ed54729d52c40" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:58.449ex; height:7.009ex;" alt="\gamma_m = \underset{\gamma}{\arg\min} \sum_{i=1}^n L\left(y_i, F_{m-1}(x_i) -
+          \gamma \frac{\partial L(y_i, F_{m-1}(x_i))}{\partial f(x_i)} \right)."></span></dd>
+</dl>
+<p>But as <span class="texhtml mvar" style="font-style:italic;">f</span> must come from a restricted class of functions (that's what allows us to generalize), we'll just choose the one that most closely approximates the gradient of <span class="texhtml mvar" style="font-style:italic;">L</span>. Having chosen <span class="texhtml mvar" style="font-style:italic;">f</span>, the multiplier <span class="texhtml mvar" style="font-style:italic;">γ</span> is then selected using <a href="https://en.wikipedia.org/wiki/Line_search" title="Line search">line search</a> just as shown in the second equation above.</p>
+<p>In pseudocode, the generic gradient boosting method is:<sup id="cite_ref-Friedman1999a_2-1" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Friedman1999a-2">[2]</a></sup><sup id="cite_ref-hastie_7-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-hastie-7">[7]</a></sup></p>
+<div style="width:auto ; margin-left: margin-bottom:1.25em;border:1px solid #8898BF; background:transparent;padding:0">
+<div style="height:8px;margin:0;border:0;border-bottom:1px solid #8898BF;background: #C8D8FF;font-size:1px"></div>
+<div style="padding:5px;font-size:small">
+<p>Input: training set <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <msubsup>
+          <mo fence="false" stretchy="false">}</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msubsup>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \{(x_{i},y_{i})\}_{i=1}^{n},}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/e9d471705385cabc4294ba359b52f717dc48f5af" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:12.904ex; height:3.009ex;" alt="{\displaystyle \{(x_{i},y_{i})\}_{i=1}^{n},}"></span> a differentiable loss function <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <mi>y</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle L(y,F(x)),}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/2e266db7246eb12c95f679fe2be99ffc00e12c2a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:11.213ex; height:2.843ex;" alt="{\displaystyle L(y,F(x)),}"></span> number of iterations <span class="texhtml mvar" style="font-style:italic;">M</span>.</p>
+<p>Algorithm:</p>
+<ol>
+<li>Initialize model with a constant value:
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow>
+              <mi>arg</mi>
+              <mo>⁡<!-- ⁡ --></mo>
+              <mo movablelimits="true" form="prefix">min</mo>
+            </mrow>
+            <mi>γ<!-- γ --></mi>
+          </munder>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mi>γ<!-- γ --></mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{0}(x)={\underset {\gamma }{\arg \min }}\sum _{i=1}^{n}L(y_{i},\gamma ).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/0f62a6e1bf376af3c3e0ac34987f4b76b53a0207" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:28.902ex; height:7.009ex;" alt="F_0(x) = \underset{\gamma}{\arg\min} \sum_{i=1}^n L(y_i, \gamma)."></span></dd>
+</dl>
+</li>
+<li>For <span class="texhtml mvar" style="font-style:italic;">m</span> = 1 to <span class="texhtml mvar" style="font-style:italic;">M</span>:
+<ol>
+<li>Compute so-called <i>pseudo-residuals</i>:
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>r</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mrow>
+            <mo>[</mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mrow>
+                  <mi mathvariant="normal">∂<!-- ∂ --></mi>
+                  <mi>L</mi>
+                  <mo stretchy="false">(</mo>
+                  <msub>
+                    <mi>y</mi>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mi>i</mi>
+                    </mrow>
+                  </msub>
+                  <mo>,</mo>
+                  <mi>F</mi>
+                  <mo stretchy="false">(</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mi>i</mi>
+                    </mrow>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+                <mrow>
+                  <mi mathvariant="normal">∂<!-- ∂ --></mi>
+                  <mi>F</mi>
+                  <mo stretchy="false">(</mo>
+                  <msub>
+                    <mi>x</mi>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mi>i</mi>
+                    </mrow>
+                  </msub>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mo>]</mo>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>F</mi>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <msub>
+              <mi>F</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>m</mi>
+                <mo>−<!-- − --></mo>
+                <mn>1</mn>
+              </mrow>
+            </msub>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msub>
+        <mspace width="1em"></mspace>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtext>for&nbsp;</mtext>
+        </mrow>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>n</mi>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle r_{im}=-\left[{\frac {\partial L(y_{i},F(x_{i}))}{\partial F(x_{i})}}\right]_{F(x)=F_{m-1}(x)}\quad {\mbox{for }}i=1,\ldots ,n.}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/724e7996c78440be2dce585a00e39ca9c561775b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.171ex; width:54.488ex; height:7.009ex;" alt="r_{im} = -\left[\frac{\partial L(y_i, F(x_i))}{\partial F(x_i)}\right]_{F(x)=F_{m-1}(x)} \quad \mbox{for } i=1,\ldots,n."></span></dd>
+</dl>
+</li>
+<li>Fit a base learner <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h_{m}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/df5d8d5ba1497f33f67eb1721a3bb7616b32ad8e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.202ex; height:2.843ex;" alt="{\displaystyle h_{m}(x)}"></span> to pseudo-residuals, i.e. train it using the training set <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>r</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <msubsup>
+          <mo fence="false" stretchy="false">}</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msubsup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \{(x_{i},r_{im})\}_{i=1}^{n}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/04851884fee624ad5fc326047e6a0df1bfe8e28d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:13.606ex; height:3.009ex;" alt="\{(x_i, r_{im})\}_{i=1}^n"></span>.</li>
+<li>Compute multiplier <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \gamma _{m}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/27a890b6f03d91a6f3f1033e4ffdf6b2c46c7737" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:2.897ex; height:2.176ex;" alt="\gamma _{m}"></span> by solving the following <a href="https://en.wikipedia.org/wiki/Line_search" title="Line search">one-dimensional optimization</a> problem:
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow class="MJX-TeXAtom-OP">
+              <mi mathvariant="normal">a</mi>
+              <mi mathvariant="normal">r</mi>
+              <mi mathvariant="normal">g</mi>
+              <mspace width="thinmathspace"></mspace>
+              <mi mathvariant="normal">m</mi>
+              <mi mathvariant="normal">i</mi>
+              <mi mathvariant="normal">n</mi>
+            </mrow>
+            <mi>γ<!-- γ --></mi>
+          </munder>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>L</mi>
+        <mrow>
+          <mo>(</mo>
+          <msub>
+            <mi>y</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mo>,</mo>
+          <msub>
+            <mi>F</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>m</mi>
+              <mo>−<!-- − --></mo>
+              <mn>1</mn>
+            </mrow>
+          </msub>
+          <mo stretchy="false">(</mo>
+          <msub>
+            <mi>x</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mo stretchy="false">)</mo>
+          <mo>+</mo>
+          <mi>γ<!-- γ --></mi>
+          <msub>
+            <mi>h</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>m</mi>
+            </mrow>
+          </msub>
+          <mo stretchy="false">(</mo>
+          <msub>
+            <mi>x</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mo stretchy="false">)</mo>
+          <mo>)</mo>
+        </mrow>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \gamma _{m}={\underset {\gamma }{\operatorname {arg\,min} }}\sum _{i=1}^{n}L\left(y_{i},F_{m-1}(x_{i})+\gamma h_{m}(x_{i})\right).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/bb264b744f04173741604889d90ec89f53c81119" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:45.976ex; height:7.009ex;" alt="\gamma_m = \underset{\gamma}{\operatorname{arg\,min}} \sum_{i=1}^n L\left(y_i, F_{m-1}(x_i) + \gamma h_m(x_i)\right)."></span></dd>
+</dl>
+</li>
+<li>Update the model:
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}(x)=F_{m-1}(x)+\gamma _{m}h_{m}(x).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/cecd6e7dc902fad2070d1c19ba763ce7fe6440bb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:30.547ex; height:2.843ex;" alt="F_{m}(x)=F_{{m-1}}(x)+\gamma _{m}h_{m}(x)."></span></dd>
+</dl>
+</li>
+</ol>
+</li>
+<li>Output <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>M</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{M}(x).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/146487545c36538312f6f6bbdad5e342f3649015" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:7.299ex; height:2.843ex;" alt="F_M(x)."></span></li>
+</ol>
+</div>
+</div>
+<h2><span class="mw-headline" id="Gradient_tree_boosting">Gradient tree boosting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=3" title="Edit section: Gradient tree boosting">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Gradient boosting is typically used with <a href="https://en.wikipedia.org/wiki/Decision_tree" title="Decision tree">decision trees</a> (especially <a href="https://en.wikipedia.org/wiki/Classification_and_regression_tree" class="mw-redirect" title="Classification and regression tree">CART</a> trees) of a fixed size as base learners. For this special case Friedman proposes a modification to gradient boosting method which improves the quality of fit of each base learner.</p>
+<p>Generic gradient boosting at the <i>m</i>-th step would fit a decision tree <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h_{m}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/df5d8d5ba1497f33f67eb1721a3bb7616b32ad8e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.202ex; height:2.843ex;" alt="{\displaystyle h_{m}(x)}"></span> to pseudo-residuals. Let <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/359e4f407b49910e02c27c2f52e87a36cd74c053" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.482ex; height:2.176ex;" alt="J"></span> be the number of its leaves. The tree partitions the input space into <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/359e4f407b49910e02c27c2f52e87a36cd74c053" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.482ex; height:2.176ex;" alt="J"></span> disjoint regions <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>J</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle R_{1m},\ldots ,R_{Jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/530e194e894f9ebb29d46fbf42f096637891a4b4" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:14.001ex; height:2.509ex;" alt="{\displaystyle R_{1m},\ldots ,R_{Jm}}"></span> and predicts a constant value in each region. Using the <a href="https://en.wikipedia.org/wiki/Indicator_notation" class="mw-redirect" title="Indicator notation">indicator notation</a>, the output of <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h_{m}(x)}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/df5d8d5ba1497f33f67eb1721a3bb7616b32ad8e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.202ex; height:2.843ex;" alt="{\displaystyle h_{m}(x)}"></span> for input <i>x</i> can be written as the sum:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>J</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mi>I</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h_{m}(x)=\sum _{j=1}^{J}b_{jm}I(x\in R_{jm}),}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/761691e7fcbd73a2a01fda4cff8fda06e7f38f47" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.338ex; width:28.442ex; height:7.676ex;" alt="h_m(x) = \sum_{j=1}^J b_{jm} I(x \in R_{jm}),"></span></dd>
+</dl>
+<p>where <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle b_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/3e39da3293168a3a5f70282326cc6b4ed7519ec9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.375ex; height:2.843ex;" alt="b_{jm}"></span> is the value predicted in the region <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle R_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/39c0c8f28587e7408b7984127ec0a02c1f0aa3bb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:4.142ex; height:2.843ex;" alt="R_{jm}"></span>.<sup id="cite_ref-8" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-8">[8]</a></sup></p>
+<p>Then the coefficients <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle b_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/3e39da3293168a3a5f70282326cc6b4ed7519ec9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.375ex; height:2.843ex;" alt="b_{jm}"></span> are multiplied by some value <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \gamma _{m}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/27a890b6f03d91a6f3f1033e4ffdf6b2c46c7737" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:2.897ex; height:2.176ex;" alt="\gamma _{m}"></span>, chosen using line search so as to minimize the loss function, and the model is updated as follows:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mspace width="1em"></mspace>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow class="MJX-TeXAtom-OP">
+              <mi mathvariant="normal">a</mi>
+              <mi mathvariant="normal">r</mi>
+              <mi mathvariant="normal">g</mi>
+              <mspace width="thinmathspace"></mspace>
+              <mi mathvariant="normal">m</mi>
+              <mi mathvariant="normal">i</mi>
+              <mi mathvariant="normal">n</mi>
+            </mrow>
+            <mi>γ<!-- γ --></mi>
+          </munder>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>γ<!-- γ --></mi>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}(x)=F_{m-1}(x)+\gamma _{m}h_{m}(x),\quad \gamma _{m}={\underset {\gamma }{\operatorname {arg\,min} }}\sum _{i=1}^{n}L(y_{i},F_{m-1}(x_{i})+\gamma h_{m}(x_{i})).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/b860dcc5aa93fa3609101acfe0657948f146253e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:78.459ex; height:7.009ex;" alt="
+    F_m(x) = F_{m-1}(x) + \gamma_m h_m(x), \quad
+    \gamma_m = \underset{\gamma}{\operatorname{arg\,min}} \sum_{i=1}^n L(y_i, F_{m-1}(x_i) + \gamma h_m(x_i)).
+  "></span></dd>
+</dl>
+<p>Friedman proposes to modify this algorithm so that it chooses a separate optimal value <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \gamma _{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/b496550eb93b8ad405a8466ddf461b674e6fa6c6" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.582ex; height:2.343ex;" alt="{\displaystyle \gamma _{jm}}"></span> for each of the tree's regions, instead of a single <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \gamma _{m}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/27a890b6f03d91a6f3f1033e4ffdf6b2c46c7737" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:2.897ex; height:2.176ex;" alt="\gamma _{m}"></span> for the whole tree. He calls the modified algorithm "TreeBoost". The coefficients <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle b_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/3e39da3293168a3a5f70282326cc6b4ed7519ec9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.375ex; height:2.843ex;" alt="b_{jm}"></span> from the tree-fitting procedure can be then simply discarded and the model update rule becomes:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>J</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mi>I</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mspace width="1em"></mspace>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mrow class="MJX-TeXAtom-OP">
+              <mi mathvariant="normal">a</mi>
+              <mi mathvariant="normal">r</mi>
+              <mi mathvariant="normal">g</mi>
+              <mspace width="thinmathspace"></mspace>
+              <mi mathvariant="normal">m</mi>
+              <mi mathvariant="normal">i</mi>
+              <mi mathvariant="normal">n</mi>
+            </mrow>
+            <mi>γ<!-- γ --></mi>
+          </munder>
+        </mrow>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <msub>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>i</mi>
+              </mrow>
+            </msub>
+            <mo>∈<!-- ∈ --></mo>
+            <msub>
+              <mi>R</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>j</mi>
+                <mi>m</mi>
+              </mrow>
+            </msub>
+          </mrow>
+        </munder>
+        <mi>L</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>γ<!-- γ --></mi>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}(x)=F_{m-1}(x)+\sum _{j=1}^{J}\gamma _{jm}h_{m}(x)I(x\in R_{jm}),\quad \gamma _{jm}={\underset {\gamma }{\operatorname {arg\,min} }}\sum _{x_{i}\in R_{jm}}L(y_{i},F_{m-1}(x_{i})+\gamma h_{m}(x_{i})).}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/d069414a145d8eb90f1bb4c818513970e80bf10e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.671ex; width:97.396ex; height:8.009ex;" alt="
+    F_m(x) = F_{m-1}(x) + \sum_{j=1}^J \gamma_{jm}h_m(x) I(x \in R_{jm}), \quad
+    \gamma_{jm} = \underset{\gamma}{\operatorname{arg\,min}} \sum_{x_i \in R_{jm}} L(y_i, F_{m-1}(x_i) + \gamma h_m(x_i)).
+  "></span></dd>
+</dl>
+<h3><span class="mw-headline" id="Size_of_trees">Size of trees</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=4" title="Edit section: Size of trees">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/359e4f407b49910e02c27c2f52e87a36cd74c053" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.482ex; height:2.176ex;" alt="J"></span>, the number of terminal nodes in trees, is the method's parameter which can be adjusted for a data set at hand. It controls the maximum allowed level of <a href="https://en.wikipedia.org/wiki/Interaction_(statistics)" title="Interaction (statistics)">interaction</a> between variables in the model. With <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J=2}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/01a05a683da4199349749539d52eed799fc9b444" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:5.764ex; height:2.176ex;" alt="J = 2"></span> (<a href="https://en.wikipedia.org/wiki/Decision_stump" title="Decision stump">decision stumps</a>), no interaction between variables is allowed. With <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+        <mo>=</mo>
+        <mn>3</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J=3}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/6a539436f8e4b82b9a15c8c568d4f5f2ed20e9d9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:5.764ex; height:2.176ex;" alt="{\displaystyle J=3}"></span> the model may include effects of the interaction between up to two variables, and so on.</p>
+<p>Hastie et al.<sup id="cite_ref-hastie_7-1" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-hastie-7">[7]</a></sup> comment that typically <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mn>4</mn>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>J</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mn>8</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 4\leq J\leq 8}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/f5538cb4c32e0d2fd35ac448cfd32be8536435cb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:10.045ex; height:2.509ex;" alt="4 \leq J \leq 8"></span> work well for boosting and results are fairly insensitive to the choice of <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/359e4f407b49910e02c27c2f52e87a36cd74c053" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.482ex; height:2.176ex;" alt="J"></span> in this range, <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+        <mo>=</mo>
+        <mn>2</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J=2}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/01a05a683da4199349749539d52eed799fc9b444" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:5.764ex; height:2.176ex;" alt="J = 2"></span> is insufficient for many applications, and <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>J</mi>
+        <mo>&gt;</mo>
+        <mn>10</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle J&gt;10}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/29ba1ea13bd5424eb0dde3348d3849124707daed" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:6.937ex; height:2.176ex;" alt="J &gt; 10"></span> is unlikely to be required.</p>
+<h2><span class="mw-headline" id="Regularization">Regularization</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=5" title="Edit section: Regularization">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Fitting the training set too closely can lead to degradation of the model's generalization ability. Several so-called <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" title="Regularization (mathematics)">regularization</a> techniques reduce this <a href="https://en.wikipedia.org/wiki/Overfitting" title="Overfitting">overfitting</a> effect by constraining the fitting procedure.</p>
+<p>One natural regularization parameter is the number of gradient boosting iterations <i>M</i> (i.e. the number of trees in the model when the base learner is a decision tree). Increasing <i>M</i> reduces the error on training set, but setting it too high may lead to overfitting. An optimal value of <i>M</i> is often selected by monitoring prediction error on a separate validation data set. Besides controlling <i>M</i>, several other regularization techniques are used.</p>
+<h3><span class="mw-headline" id="Shrinkage">Shrinkage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=6" title="Edit section: Shrinkage">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>An important part of gradient boosting method is regularization by shrinkage which consists in modifying the update rule as follows:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>+</mo>
+        <mi>ν<!-- ν --></mi>
+        <mo>⋅<!-- ⋅ --></mo>
+        <msub>
+          <mi>γ<!-- γ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <msub>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>,</mo>
+        <mspace width="1em"></mspace>
+        <mn>0</mn>
+        <mo>&lt;</mo>
+        <mi>ν<!-- ν --></mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mn>1</mn>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{m}(x)=F_{m-1}(x)+\nu \cdot \gamma _{m}h_{m}(x),\quad 0&lt;\nu \leq 1,}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/0b737e15d88c6cb54951f3eb47faf3db0731d4e8" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:46.653ex; height:2.843ex;" alt="F_m(x) = F_{m-1}(x) + \nu \cdot \gamma_m h_m(x), \quad 0 &lt; \nu \leq 1,"></span></dd>
+</dl>
+<p>where parameter <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ν<!-- ν --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \nu }</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/c15bbbb971240cf328aba572178f091684585468" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.243ex; height:1.676ex;" alt="\nu "></span> is called the "learning rate".</p>
+<p>Empirically it has been found that using small learning rates (such as <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ν<!-- ν --></mi>
+        <mo>&lt;</mo>
+        <mn>0.1</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \nu &lt;0.1}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/1dc11845c4ef971b8ee52190037c1c881bf8fcda" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:7.355ex; height:2.176ex;" alt="\nu &lt; 0.1"></span>) yields dramatic improvements in model's generalization ability over gradient boosting without shrinking (<span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ν<!-- ν --></mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \nu =1}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/c2ca7fd51cd02b2c4311446c6d6b0f53b2c529cf" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:5.524ex; height:2.176ex;" alt="\nu = 1"></span>).<sup id="cite_ref-hastie_7-2" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-hastie-7">[7]</a></sup> However, it comes at the price of increasing computational time both during training and querying: lower learning rate requires more iterations.</p>
+<h3><span class="mw-headline" id="Stochastic_gradient_boosting">Stochastic gradient boosting</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=7" title="Edit section: Stochastic gradient boosting">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Soon after the introduction of gradient boosting Friedman proposed a minor modification to the algorithm, motivated by <a href="https://en.wikipedia.org/wiki/Leo_Breiman" title="Leo Breiman">Breiman</a>'s <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregation" class="mw-redirect" title="Bootstrap aggregation">bagging</a> method.<sup id="cite_ref-Friedman1999b_3-1" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Friedman1999b-3">[3]</a></sup> Specifically, he proposed that at each iteration of the algorithm, a base learner should be fit on a subsample of the training set drawn at random without replacement.<sup id="cite_ref-9" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-9">[9]</a></sup> Friedman observed a substantial improvement in gradient boosting's accuracy with this modification.</p>
+<p>Subsample size is some constant fraction <i>f</i> of the size of the training set. When <i>f</i> = 1, the algorithm is deterministic and identical to the one described above. Smaller values of <i>f</i> introduce randomness into the algorithm and help prevent <a href="https://en.wikipedia.org/wiki/Overfitting" title="Overfitting">overfitting</a>, acting as a kind of <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" title="Regularization (mathematics)">regularization</a>. The algorithm also becomes faster, because regression trees have to be fit to smaller datasets at each iteration. Friedman<sup id="cite_ref-Friedman1999b_3-2" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Friedman1999b-3">[3]</a></sup> obtained that <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mn>0.5</mn>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>f</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mn>0.8</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 0.5\leq f\leq 0.8}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/a327edb35a0e4d5ade75128a32f46d1c6522d166" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:13.513ex; height:2.509ex;" alt="{\displaystyle 0.5\leq f\leq 0.8}"></span> leads to good results for small and moderate sized training sets. Therefore, <i>f</i> is typically set to 0.5, meaning that one half of the training set is used to build each base learner.</p>
+<p>Also, like in bagging, subsampling allows one to define an <a href="https://en.wikipedia.org/wiki/Out-of-bag_error" title="Out-of-bag error">out-of-bag error</a> of the prediction performance improvement by evaluating predictions on those observations which were not used in the building of the next base learner. Out-of-bag estimates help avoid the need for an independent validation dataset, but often underestimate actual performance improvement and the optimal number of iterations.<sup id="cite_ref-gbm-vignette_10-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-gbm-vignette-10">[10]</a></sup></p>
+<h3><span class="mw-headline" id="Number_of_observations_in_leaves">Number of observations in leaves</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=8" title="Edit section: Number of observations in leaves">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Gradient tree boosting implementations often also use regularization by limiting the minimum number of observations in trees' terminal nodes (this parameter is called <code>n.minobsinnode</code> in the R <code>gbm</code> package<sup id="cite_ref-gbm-vignette_10-1" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-gbm-vignette-10">[10]</a></sup>). It is used in the tree building process by ignoring any splits that lead to nodes containing fewer than this number of training set instances.</p>
+<p>Imposing this limit helps to reduce variance in predictions at leaves.</p>
+<h3><span class="mw-headline" id="Penalize_Complexity_of_Tree">Penalize Complexity of Tree</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=9" title="Edit section: Penalize Complexity of Tree">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Another useful regularization techniques for gradient boosted trees is to penalize model complexity of the learned model. <sup id="cite_ref-11" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-11">[11]</a></sup> The model complexity can be defined as the proportional number of leaves in the learned trees. The joint optimization of loss and model complexity corresponds to a post-pruning algorithm to remove branches that fail to reduce the loss by a threshold. Other kinds of regularization such as an <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>ℓ<!-- ℓ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \ell _{2}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/85a4571ee9be10bd3c9df2480ab3d280f99e801a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:2.042ex; height:2.509ex;" alt="\ell _{2}"></span> penalty on the leaf values can also be added to avoid overfitting.</p>
+<h2><span class="mw-headline" id="Usage">Usage</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=10" title="Edit section: Usage">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Recently, gradient boosting has gained some popularity in the field of <a href="https://en.wikipedia.org/wiki/Learning_to_rank" title="Learning to rank">learning to rank</a>. The commercial web search engines <a href="https://en.wikipedia.org/wiki/Yahoo" class="mw-redirect" title="Yahoo">Yahoo</a><sup id="cite_ref-12" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-12">[12]</a></sup> and <a href="https://en.wikipedia.org/wiki/Yandex" title="Yandex">Yandex</a><sup id="cite_ref-snezhinsk_13-0" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-snezhinsk-13">[13]</a></sup> use variants of gradient boosting in their machine-learned ranking engines.</p>
+<h2><span class="mw-headline" id="Names">Names</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=11" title="Edit section: Names">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The method goes by a variety of names. Friedman introduced his regression technique as a "Gradient Boosting Machine" (GBM).<sup id="cite_ref-Friedman1999a_2-2" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-Friedman1999a-2">[2]</a></sup> Mason, Baxter et. el. described the generalized abstract class of algorithms as "functional gradient boosting".<sup id="cite_ref-MasonBaxterBartlettFrean1999a_4-1" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-MasonBaxterBartlettFrean1999a-4">[4]</a></sup><sup id="cite_ref-MasonBaxterBartlettFrean1999b_5-1" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-MasonBaxterBartlettFrean1999b-5">[5]</a></sup></p>
+<p>A popular open-source implementation<sup id="cite_ref-gbm-vignette_10-2" class="reference"><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_note-gbm-vignette-10">[10]</a></sup> for <a href="https://en.wikipedia.org/wiki/R_(programming_language)" title="R (programming language)">R</a> calls it "Generalized Boosting Model". Commercial implementations from Salford Systems use the names "Multiple Additive Regression Trees" (MART) and TreeNet, both trademarked.</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=12" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/AdaBoost" title="AdaBoost">AdaBoost</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Random_forest" title="Random forest">Random forest</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Xgboost" title="Xgboost">xgboost</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit&amp;section=13" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-Breiman1997-1"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Breiman1997_1-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Breiman, L. "<a rel="nofollow" class="external text" href="http://statistics.berkeley.edu/sites/default/files/tech-reports/486.pdf">Arcing The Edge</a>" (June 1997)</span></li>
+<li id="cite_note-Friedman1999a-2"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Friedman1999a_2-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Friedman1999a_2-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Friedman1999a_2-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text">Friedman, J. H. "<a rel="nofollow" class="external text" href="http://www-stat.stanford.edu/~jhf/ftp/trebst.pdf">Greedy Function Approximation: A Gradient Boosting Machine.</a>" (February 1999)</span></li>
+<li id="cite_note-Friedman1999b-3"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Friedman1999b_3-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Friedman1999b_3-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-Friedman1999b_3-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text">Friedman, J. H. "<a rel="nofollow" class="external text" href="https://statweb.stanford.edu/~jhf/ftp/stobst.pdf">Stochastic Gradient Boosting.</a>" (March 1999)</span></li>
+<li id="cite_note-MasonBaxterBartlettFrean1999a-4"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-MasonBaxterBartlettFrean1999a_4-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-MasonBaxterBartlettFrean1999a_4-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation conference">Mason, L.; Baxter, J.; Bartlett, P. L.; Frean, Marcus (1999). <a rel="nofollow" class="external text" href="http://papers.nips.cc/paper/1766-boosting-algorithms-as-gradient-descent.pdf">"Boosting Algorithms as Gradient Descent"</a> <span style="font-size:85%;">(PDF)</span>. In S.A. Solla and T.K. Leen and K. Müller. <i>Advances in Neural Information Processing Systems 12</i>. MIT Press. pp.&nbsp;512–518.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGradient+boosting&amp;rft.atitle=Boosting+Algorithms+as+Gradient+Descent&amp;rft.au=Bartlett%2C+P.+L.&amp;rft.au=Baxter%2C+J.&amp;rft.aufirst=L.&amp;rft.au=Frean%2C+Marcus&amp;rft.aulast=Mason&amp;rft.btitle=Advances+in+Neural+Information+Processing+Systems+12&amp;rft.date=1999&amp;rft.genre=conference&amp;rft_id=http%3A%2F%2Fpapers.nips.cc%2Fpaper%2F1766-boosting-algorithms-as-gradient-descent.pdf&amp;rft.pages=512-518&amp;rft.pub=MIT+Press&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-MasonBaxterBartlettFrean1999b-5"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-MasonBaxterBartlettFrean1999b_5-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-MasonBaxterBartlettFrean1999b_5-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation encyclopaedia">Mason, L.; Baxter, J.; Bartlett, P. L.; Frean, Marcus (May 1999). <a rel="nofollow" class="external text" href="http://maths.dur.ac.uk/~dma6kp/pdf/face_recognition/Boosting/Mason99AnyboostLong.pdf"><i>Boosting Algorithms as Gradient Descent in Function Space</i></a> <span style="font-size:85%;">(PDF)</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGradient+boosting&amp;rft.au=Bartlett%2C+P.+L.&amp;rft.au=Baxter%2C+J.&amp;rft.aufirst=L.&amp;rft.au=Frean%2C+Marcus&amp;rft.aulast=Mason&amp;rft.btitle=Boosting+Algorithms+as+Gradient+Descent+in+Function+Space&amp;rft.date=1999-05&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fmaths.dur.ac.uk%2F~dma6kp%2Fpdf%2Fface_recognition%2FBoosting%2FMason99AnyboostLong.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-6"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation web">Cheng Li. <a rel="nofollow" class="external text" href="http://www.chengli.io/tutorials/gradient_boosting.pdf">"A Gentle Introduction to Gradient Boosting"</a> <span style="font-size:85%;">(PDF)</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGradient+boosting&amp;rft.au=Cheng+Li&amp;rft.btitle=A+Gentle+Introduction+to+Gradient+Boosting&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.chengli.io%2Ftutorials%2Fgradient_boosting.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-hastie-7"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-hastie_7-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-hastie_7-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-hastie_7-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation book">Hastie, T.; Tibshirani, R.; Friedman, J. H. (2009). "10. Boosting and Additive Trees". <a rel="nofollow" class="external text" href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/"><i>The Elements of Statistical Learning</i></a> (2nd ed.). New York: Springer. pp.&nbsp;337–384. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-387-84857-6" title="Special:BookSources/0-387-84857-6">0-387-84857-6</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGradient+boosting&amp;rft.atitle=10.+Boosting+and+Additive+Trees&amp;rft.aufirst=T.&amp;rft.au=Friedman%2C+J.+H.&amp;rft.aulast=Hastie&amp;rft.au=Tibshirani%2C+R.&amp;rft.btitle=The+Elements+of+Statistical+Learning&amp;rft.date=2009&amp;rft.edition=2nd&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fwww-stat.stanford.edu%2F~tibs%2FElemStatLearn%2F&amp;rft.isbn=0-387-84857-6&amp;rft.pages=337-384&amp;rft.place=New+York&amp;rft.pub=Springer&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-8"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Note: in case of usual CART trees, the trees are fitted using least-squares loss, and so the coefficient <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle b_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/3e39da3293168a3a5f70282326cc6b4ed7519ec9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.375ex; height:2.843ex;" alt="b_{jm}"></span> for the region <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle R_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/39c0c8f28587e7408b7984127ec0a02c1f0aa3bb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:4.142ex; height:2.843ex;" alt="R_{jm}"></span> is equal to just the value of output variable, averaged over all training instances in <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>R</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mi>m</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle R_{jm}}</annotation>
+  </semantics>
+</math></span><img src="./DT06_files/39c0c8f28587e7408b7984127ec0a02c1f0aa3bb" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:4.142ex; height:2.843ex;" alt="R_{jm}"></span>.</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-9"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Note that this is different from bagging, which samples with replacement because it uses samples of the same size as the training set.</span></li>
+<li id="cite_note-gbm-vignette-10"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-gbm-vignette_10-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-gbm-vignette_10-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-gbm-vignette_10-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text">Ridgeway, Greg (2007). <a rel="nofollow" class="external text" href="https://cran.r-project.org/web/packages/gbm/gbm.pdf">Generalized Boosted Models: A guide to the gbm package.</a></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-11"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Tianqi Chen. <a rel="nofollow" class="external text" href="http://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf">Introduction to Boosted Trees</a></span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-12"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Cossock, David and Zhang, Tong (2008). <a rel="nofollow" class="external text" href="http://www.stat.rutgers.edu/~tzhang/papers/it08-ranking.pdf">Statistical Analysis of Bayes Optimal Subset Ranking</a>, page 14.</span></li>
+<li id="cite_note-snezhinsk-13"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Gradient_boosting#cite_ref-snezhinsk_13-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://webmaster.ya.ru/replies.xml?item_no=5707&amp;ncrnd=5118">Yandex corporate blog entry about new ranking model "Snezhinsk"</a> (in Russian)</span></li>
+</ol>
+</div>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:26649339-0!*!0!!en!*!*!math=5 and timestamp 20161013072340 and revision id 743675770
+ -->
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.log.warn("Gadget \"teahouse\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");mw.log.warn("Gadget \"ReferenceTooltips\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");mw.log.warn("Gadget \"featured-articles-links\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");});</script><noscript>&lt;img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;oldid=743675770">https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;oldid=743675770</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Decision_trees" title="Category:Decision trees">Decision trees</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Ensemble_learning" title="Category:Ensemble learning">Ensemble learning</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [alt-shift-n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [alt-shift-y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Gradient+boosting" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Gradient+boosting" title="You&#39;re encouraged to log in; however, it&#39;s not mandatory. [alt-shift-o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/Gradient_boosting" title="View the content page [alt-shift-c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Gradient_boosting" title="Discussion about the content page [alt-shift-t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="https://en.wikipedia.org/wiki/Gradient_boosting#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/Gradient_boosting">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="https://en.wikipedia.org/wiki/Gradient_boosting#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Wikipedia [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Gradient_boosting" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Gradient_boosting" rel="nofollow" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;oldid=743675770" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q5591907" title="Link to connected data repository item [alt-shift-g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Gradient_boosting&amp;id=743675770" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Gradient+boosting">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Gradient+boosting&amp;returnto=Gradient+boosting&amp;oldid=743675770&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Gradient_boosting&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="Language settings" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+											</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q5591907#sitelinks-wikipedia" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 10 October 2016, at 17:38.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Gradient_boosting&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="./DT06_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="./DT06_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["ext.cite.a11y","ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.centralNotice.geoIP","ext.centralNotice.startUp"]);});</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set( {
+    "wgPageParseReport": {
+        "limitreport": {
+            "cputime": "0.184",
+            "walltime": "0.795",
+            "ppvisitednodes": {
+                "value": 964,
+                "limit": 1000000
+            },
+            "ppgeneratednodes": {
+                "value": 0,
+                "limit": 1500000
+            },
+            "postexpandincludesize": {
+                "value": 8320,
+                "limit": 2097152
+            },
+            "templateargumentsize": {
+                "value": 39,
+                "limit": 2097152
+            },
+            "expansiondepth": {
+                "value": 4,
+                "limit": 40
+            },
+            "expensivefunctioncount": {
+                "value": 0,
+                "limit": 500
+            },
+            "entityaccesscount": {
+                "value": 0,
+                "limit": 400
+            },
+            "timingprofile": [
+                "100.00%   99.660      1 -total",
+                " 77.70%   77.433      1 Template:Reflist",
+                " 45.23%   45.081      1 Template:Cite_conference",
+                "  5.90%    5.878      1 Template:Cite_encyclopedia",
+                "  5.40%    5.386      1 Template:Cite_book",
+                "  5.19%    5.170      1 Template:Cite_web",
+                "  2.12%    2.109     21 Template:Mvar",
+                "  1.86%    1.853      1 Template:Framebox",
+                "  1.02%    1.019      1 Template:Frame-footer"
+            ]
+        },
+        "scribunto": {
+            "limitreport-timeusage": {
+                "value": "0.033",
+                "limit": "10.000"
+            },
+            "limitreport-memusage": {
+                "value": 1684492,
+                "limit": 52428800
+            }
+        },
+        "cachereport": {
+            "origin": "mw1267",
+            "timestamp": "20161013072340",
+            "ttl": 2592000,
+            "transientcontent": false
+        }
+    }
+} );});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":60,"wgHostname":"mw1262"});});</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

@@ -30,14 +30,14 @@ class Scrapper:
         'Seller',
         'Seller Rating',
         'Ebay Item Number',
+        'Sold',
         'Item Description',
         'Price',
         'Postage',
         'Condition',
-        'Link',
         'Category',
-        'Sold',
-        'Available'
+        'Available',
+        'Link'
     ]
 
     column_width = [0 for x in range(len(xl_header))]
@@ -96,13 +96,13 @@ class Scrapper:
                 self.can_call_finding_api = False
                 print 'ERROR :', e.response.dict()
 
-            self.workbook.save('ebay_' + str(datetime.datetime.today()) + '.xlsx')
+            self.workbook.save('ebay_' + str(datetime.datetime.today()).replace(':', '_') + '.xlsx')
 
 
     def parse_response(self, response):
 
         soup = BeautifulSoup(response.content, 'lxml')
-        api = Trading(config_file='ebay.yaml', siteid=15)
+        api = Trading(config_file='ebay.yaml', siteid='15')
 
         if soup.searchresult is not None:
             for item in soup.searchresult.find_all('item'):
@@ -110,61 +110,42 @@ class Scrapper:
                     self.listing_count = self.listing_count + 1
 
                     listing = []
-                    listing.append(str(self.listing_count))
 
                     seller_user_name = item.find('sellerusername')
                     if seller_user_name is not None:
                         seller_user_name = seller_user_name.string
 
-                    listing.append(unicode(seller_user_name))
-
                     feedback_score = item.find('feedbackscore')
                     if feedback_score is not None:
                         feedback_score = feedback_score.string
-
-                    listing.append(unicode(feedback_score))
 
                     item_id = item.find('itemid')
                     if item_id is not None:
                         item_id = item_id.string
 
-                    listing.append(unicode(item_id))
-
                     title = item.find('title')
                     if title is not None:
                         title = title.string
-
-                    listing.append(unicode(title))
 
                     current_price = item.find('currentprice')
                     if current_price is not None:
                         current_price = current_price.get('currencyid') + ' ' + current_price.string
 
-                    listing.append(unicode(current_price))
-
                     shipping_cost = item.find('shippingservicecost')
                     if shipping_cost is not None:
                         shipping_cost = shipping_cost.get('currencyid') + ' ' + shipping_cost.string
-
-                    listing.append(unicode(shipping_cost))
 
                     condition = item.find('conditiondisplayname')
                     if condition is not None:
                         condition = condition.string
 
-                    listing.append(unicode(condition))
-
                     item_url = item.find('viewitemurl')
                     if item_url is not None:
-                        item_url = item_url.string
-
-                    listing.append(unicode(item_url))
+                        item_url = '=HYPERLINK("'+ item_url.string +'","' + item_url.string +'")'
 
                     category_name = item.find('categoryname')
                     if category_name is not None:
                         category_name = category_name.string
-
-                    listing.append(unicode(category_name))
 
                     if self.can_call_trading_api:
                         try:
@@ -184,8 +165,6 @@ class Scrapper:
                             if quantity_sold is not None:
                                 quantity_sold = quantity_sold.string
 
-                            listing.append(unicode(quantity_sold))
-
                             quanity_available = trading_soup.find('quantityavailablehint')
                             if quanity_available is not None:
                                 quanity_available = quanity_available.string
@@ -195,11 +174,23 @@ class Scrapper:
                                 threshold = threshold.string
                                 quanity_available = unicode(quanity_available) + unicode(threshold)
 
-                            listing.append(quanity_available)
 
                         except ConnectionError as e:
                             self.can_call_trading_api = False
                             print e.response.dict()
+
+                    listing.append(str(self.listing_count))
+                    listing.append(unicode(seller_user_name))
+                    listing.append(unicode(feedback_score))
+                    listing.append(unicode(item_id))
+                    listing.append(unicode(quantity_sold).zfill(3));
+                    listing.append(unicode(title))
+                    listing.append(unicode(current_price))
+                    listing.append(unicode(shipping_cost))
+                    listing.append(unicode(condition))
+                    listing.append(unicode(category_name))
+                    listing.append(quanity_available)
+                    listing.append(unicode(item_url))
 
                     self.write_to_XL(listing)
             print '(Done)'

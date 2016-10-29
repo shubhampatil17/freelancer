@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://en.wikipedia.org/wiki/Random_forest -->
+<html class="client-js ve-not-available" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Random forest - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Random_forest","wgTitle":"Random forest","wgCurRevisionId":736931864,"wgRevisionId":736931864,"wgArticleId":1363880,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CS1 maint: Uses authors parameter","Articles to be merged from May 2015","All articles to be merged","Classification algorithms","Ensemble learning","Decision trees"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Random_forest","wgRelevantArticleId":1363880,"wgRequestId":"WAJfcgpAIDMAAEq9zn8AAACS","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgWikibaseItemId":"Q245748","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user.cssprefs":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.desktopArticleTarget.init","ext.uls.interface","ext.quicksurveys.init","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="./EL14_files/load.php">
+<script async="" src="./EL14_files/load(1).php"></script>
+<style>
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-right:10px solid #c9c9c9;border-bottom:10px solid transparent;display:inline-block;left:-11px; top:17px;position:absolute}.uls-menu.callout .caret-after{border-right:10px solid #fcfcfc;display:inline-block;left:-10px}.uls-menu.callout--languageselection .caret-after{border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient( transparent,transparent ),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-image:linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714)!ie;background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+.cite-accessibility-label{ top:-99999px;clip:rect( 1px 1px 1px 1px ); clip:rect( 1px,1px,1px,1px ); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Gear_icon.svg/24px-Gear_icon.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/7/77/Gear_icon.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:.5em 1em;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline;zoom:1;vertical-align:middle;background-color:#f8f9fa;color:#222222;border:1px solid #9aa0a7;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background-color:#d9d9d9;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#fff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:focus{outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not( :disabled ){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive,.mw-ui-button.mw-ui-constructive,.mw-ui-button.mw-ui-primary{background-color:#3366cc;color:#fff;border:1px solid #3366cc;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover,.mw-ui-button.mw-ui-constructive:hover,.mw-ui-button.mw-ui-primary:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus,.mw-ui-button.mw-ui-constructive:focus,.mw-ui-button.mw-ui-primary:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-constructive:active,.mw-ui-button.mw-ui-primary:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-constructive.is-on,.mw-ui-button.mw-ui-primary.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-checked,.mw-ui-button.mw-ui-primary.mw-ui-checked{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-constructive:disabled,.mw-ui-button.mw-ui-primary:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-constructive:disabled:hover,.mw-ui-button.mw-ui-primary:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-constructive:disabled:active,.mw-ui-button.mw-ui-primary:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-primary:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-constructive.mw-ui-quiet,.mw-ui-button.mw-ui-primary.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-primary.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-primary.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-primary.mw-ui-quiet.mw-ui-checked{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-primary.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-primary.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-destructive{background-color:#cc3333;color:#fff;border:1px solid #cc3333;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#e53939;border-color:#e53939}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #cc3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background-color:#873636;border-color:#873636;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#e53939}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#873636}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#cc3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#222222}.mw-ui-button.mw-ui-quiet:hover{background-color:transparent;color:#444444}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#000000}.mw-ui-button.mw-ui-quiet:focus{background-color:transparent;color:#222222}.mw-ui-button.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}a.mw-ui-button{text-decoration:none;line-height:normal}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.ext-quick-survey-panel,.ext-qs-loader-bar{width:auto;background-color:#eeeeee} .ext-qs-loader-bar{display:block;height:100px;margin-left:1.4em;clear:right;float:right;background-color:#eeeeee}.ext-qs-loader-bar.mw-ajax-loader{top:0}@media all and (min-width:720px){.ext-qs-loader-bar,.ext-quick-survey-panel{margin-left:1.4em;width:300px;clear:right;float:right}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23777%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M851.2%2071.6L690.7%20232.1l-40.1-40.3-9.6%20164.8%20164.8-9.3-40.3-40.4L926%20146.4l58.5%2058.5L997.6%200%20792.7%2013.1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M769.6%2089.3H611.9l70.9%2070.8%207.9%207.5m-47.1%20234.6l-51.2%203%203-51.2%209.4-164.4%205.8-100.3H26.4V768h883.1V387l-100.9%205.8-165%209.4zM813.9%20678H113.6l207.2-270.2%2031.5-12.9L548%20599.8l105.9-63.2%20159.8%20140.8.2.6zm95.6-291.9V228l-79.1%2078.9%207.8%207.9%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A);background-image:url(/w/extensions/MultimediaViewer/resources/mmv/img/expand.svg?b714e)!ie}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M897%20454.6V313.4L810.4%20299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4%2050.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427%2085.6c-23.3%206.4-45.7%2016-65.8%2027.3l-71.4-50.5-100.3%2099.5%2050.5%2071.4c-11.2%2020.9-20.9%2042.5-27.3%2066.6L127%20313.4v141.2l85.8%2014.4c6.4%2023.3%2016%2045.7%2027.3%2066.6L189.6%20607l99.5%2099.5%2071.4-50.5c20.9%2011.2%2042.5%2020.9%2066.6%2027.3l14.4%2085.8h141.2l14.4-86.6c23.3-6.4%2045.7-16%2065.8-27.3l71.4%2050.5%2099.5-99.5-50.5-71.4c11.2-20.9%2020.9-42.5%2027.3-66.6l86.4-13.6zm-385%2077c-81.8%200-147.6-66.6-147.6-147.6%200-81.8%2066.6-147.6%20147.6-147.6S659.6%20302.2%20659.6%20384%20593.8%20531.6%20512%20531.6z%22%20fill%3D%22%23777%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-image:url(/w/extensions/MultimediaViewer/resources/mmv/img/gear_gray.svg?330ae)!ie;opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{  pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; opacity:0.5}.ve-activated .catlinks{cursor:pointer}.ve-activated .catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./EL14_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.28.0-wmf.22">
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Random_forest">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Random_forest">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="./EL14_files/load(3).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Random_forest rootpage-Random_forest skin-vector action-view feature-footer-v2">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Random forest</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="https://en.wikipedia.org/wiki/Random_forest#mw-head">navigation</a>, 					<a href="https://en.wikipedia.org/wiki/Random_forest#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div role="note" class="hatnote">This article is about the machine learning technique. For other kinds of random tree, see <a href="https://en.wikipedia.org/wiki/Random_tree_(disambiguation)" class="mw-redirect" title="Random tree (disambiguation)">Random tree (disambiguation)</a>.</div>
+<table class="plainlinks metadata ambox ambox-move" role="presentation">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="./EL14_files/50px-Mergefrom.svg.png" width="50" height="20" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mergefrom.svg/75px-Mergefrom.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Mergefrom.svg/100px-Mergefrom.svg.png 2x" data-file-width="50" data-file-height="20"></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">It has been suggested that <i><a href="https://en.wikipedia.org/wiki/Kernel_random_forest" title="Kernel random forest">Kernel random forest</a></i> be <a href="https://en.wikipedia.org/wiki/Wikipedia:Merging" title="Wikipedia:Merging">merged</a> into this article. (<a href="https://en.wikipedia.org/wiki/Talk:Random_forest#Proposed_merge_with_Kernel_random_forest" title="Talk:Random forest">Discuss</a>) <small><i>Proposed since May 2015.</i></small></span></td>
+</tr>
+</tbody></table>
+<table class="vertical-navbox nowraplinks" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%">
+<tbody><tr>
+<th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em"><a href="https://en.wikipedia.org/wiki/Machine_learning" title="Machine learning">Machine learning</a> and<br>
+<a href="https://en.wikipedia.org/wiki/Data_mining" title="Data mining">data mining</a></th>
+</tr>
+<tr>
+<td style="padding:0.2em 0 0.4em;padding:0.25em 0.25em 0.75em;"><a href="https://en.wikipedia.org/wiki/File:Kernel_Machine.svg" class="image"><img alt="Kernel Machine.svg" src="./EL14_files/220px-Kernel_Machine.svg.png" width="220" height="100" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kernel_Machine.svg/330px-Kernel_Machine.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kernel_Machine.svg/440px-Kernel_Machine.svg.png 2x" data-file-width="512" data-file-height="232"></a></td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame1">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left">Problems<a class="NavToggle" id="NavToggle1" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Statistical_classification" title="Statistical classification">Classification</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cluster_analysis" title="Cluster analysis">Clustering</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">Regression</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Anomaly_detection" title="Anomaly detection">Anomaly detection</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Association_rule_learning" title="Association rule learning">Association rules</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Reinforcement_learning" title="Reinforcement learning">Reinforcement learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Structured_prediction" title="Structured prediction">Structured prediction</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Feature_engineering" title="Feature engineering">Feature engineering</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Feature_learning" title="Feature learning">Feature learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Online_machine_learning" title="Online machine learning">Online learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Semi-supervised_learning" title="Semi-supervised learning">Semi-supervised learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Unsupervised_learning" title="Unsupervised learning">Unsupervised learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Learning_to_rank" title="Learning to rank">Learning to rank</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Grammar_induction" title="Grammar induction">Grammar induction</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame2">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left">
+<div style="padding:0.1em 0;line-height:1.2em;"><a href="https://en.wikipedia.org/wiki/Supervised_learning" title="Supervised learning">Supervised learning</a><br>
+<span style="font-weight:normal;"><small>(<b><a href="https://en.wikipedia.org/wiki/Statistical_classification" title="Statistical classification">classification</a></b>&nbsp;• <b><a href="https://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">regression</a></b>)</small></span></div>
+<a class="NavToggle" id="NavToggle2" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Decision_tree_learning" title="Decision tree learning">Decision trees</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">Ensembles</a> (<a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">Bagging</a>, <a href="https://en.wikipedia.org/wiki/Boosting_(machine_learning)" title="Boosting (machine learning)">Boosting</a>, <strong class="selflink">Random forest</strong>)</li>
+<li><a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm" title="K-nearest neighbors algorithm"><i>k</i>-NN</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Linear_regression" title="Linear regression">Linear regression</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier" title="Naive Bayes classifier">Naive Bayes</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Artificial_neural_network" title="Artificial neural network">Neural networks</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Logistic_regression" title="Logistic regression">Logistic regression</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Perceptron" title="Perceptron">Perceptron</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Relevance_vector_machine" title="Relevance vector machine">Relevance vector machine (RVM)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Support_vector_machine" title="Support vector machine">Support vector machine (SVM)</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame3">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left"><a href="https://en.wikipedia.org/wiki/Cluster_analysis" title="Cluster analysis">Clustering</a><a class="NavToggle" id="NavToggle3" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/BIRCH" title="BIRCH">BIRCH</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hierarchical_clustering" title="Hierarchical clustering">Hierarchical</a></li>
+<li><a href="https://en.wikipedia.org/wiki/K-means_clustering" title="K-means clustering"><i>k</i>-means</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Expectation-maximization_algorithm" class="mw-redirect" title="Expectation-maximization algorithm">Expectation-maximization (EM)</a></li>
+<li><br>
+<a href="https://en.wikipedia.org/wiki/DBSCAN" title="DBSCAN">DBSCAN</a></li>
+<li><a href="https://en.wikipedia.org/wiki/OPTICS_algorithm" title="OPTICS algorithm">OPTICS</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Mean-shift" class="mw-redirect" title="Mean-shift">Mean-shift</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame4">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left"><a href="https://en.wikipedia.org/wiki/Dimensionality_reduction" title="Dimensionality reduction">Dimensionality reduction</a><a class="NavToggle" id="NavToggle4" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Factor_analysis" title="Factor analysis">Factor analysis</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Canonical_correlation_analysis" class="mw-redirect" title="Canonical correlation analysis">CCA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Independent_component_analysis" title="Independent component analysis">ICA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Linear_discriminant_analysis" title="Linear discriminant analysis">LDA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization" title="Non-negative matrix factorization">NMF</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Principal_component_analysis" title="Principal component analysis">PCA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding" title="T-distributed stochastic neighbor embedding">t-SNE</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame5">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left"><a href="https://en.wikipedia.org/wiki/Structured_prediction" title="Structured prediction">Structured prediction</a><a class="NavToggle" id="NavToggle5" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Graphical_model" title="Graphical model">Graphical models</a> (<a href="https://en.wikipedia.org/wiki/Bayesian_network" title="Bayesian network">Bayes net</a>, <a href="https://en.wikipedia.org/wiki/Conditional_random_field" title="Conditional random field">CRF</a>, <a href="https://en.wikipedia.org/wiki/Hidden_Markov_model" title="Hidden Markov model">HMM</a>)</li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame6">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left"><a href="https://en.wikipedia.org/wiki/Anomaly_detection" title="Anomaly detection">Anomaly detection</a><a class="NavToggle" id="NavToggle6" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_classification" class="mw-redirect" title="K-nearest neighbors classification"><i>k</i>-NN</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Local_outlier_factor" title="Local outlier factor">Local outlier factor</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame7">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left"><a href="https://en.wikipedia.org/wiki/Artificial_neural_network" title="Artificial neural network">Neural nets</a><a class="NavToggle" id="NavToggle7" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Autoencoder" title="Autoencoder">Autoencoder</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Deep_learning" title="Deep learning">Deep learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Multilayer_perceptron" title="Multilayer perceptron">Multilayer perceptron</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Recurrent_neural_network" title="Recurrent neural network">RNN</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Restricted_Boltzmann_machine" title="Restricted Boltzmann machine">Restricted Boltzmann machine</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Self-organizing_map" title="Self-organizing map">SOM</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Convolutional_neural_network" title="Convolutional neural network">Convolutional neural network</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame8">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left"><a href="https://en.wikipedia.org/wiki/Reinforcement_Learning" class="mw-redirect" title="Reinforcement Learning">Reinforcement Learning</a><a class="NavToggle" id="NavToggle8" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Q-Learning" class="mw-redirect" title="Q-Learning">Q-Learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/State-Action-Reward-State-Action" title="State-Action-Reward-State-Action">SARSA</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Temporal_Difference_Learning" class="mw-redirect" title="Temporal Difference Learning">Temporal Difference (TD)</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame9">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left">Theory<a class="NavToggle" id="NavToggle9" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bias-variance_dilemma" class="mw-redirect" title="Bias-variance dilemma">Bias-variance dilemma</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Computational_learning_theory" title="Computational learning theory">Computational learning theory</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Empirical_risk_minimization" title="Empirical risk minimization">Empirical risk minimization</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Occam_learning" title="Occam learning">Occam learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Probably_approximately_correct_learning" title="Probably approximately correct learning">PAC learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Statistical_learning_theory" title="Statistical learning theory">Statistical learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_theory" title="Vapnik–Chervonenkis theory">VC theory</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame10">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left">Machine learning venues<a class="NavToggle" id="NavToggle10" href="https://en.wikipedia.org/wiki/Random_forest#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Conference_on_Neural_Information_Processing_Systems" title="Conference on Neural Information Processing Systems">NIPS</a></li>
+<li><a href="https://en.wikipedia.org/wiki/International_Conference_on_Machine_Learning" title="International Conference on Machine Learning">ICML</a></li>
+<li><a href="https://en.wikipedia.org/w/index.php?title=International_Journal_of_Machine_Learning_and_Cybernetics&amp;action=edit&amp;redlink=1" class="new" title="International Journal of Machine Learning and Cybernetics (page does not exist)">IJMLC</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Machine_Learning_(journal)" title="Machine Learning (journal)">ML</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Journal_of_Machine_Learning_Research" title="Journal of Machine Learning Research">JMLR</a></li>
+<li><a rel="nofollow" class="external text" href="http://arxiv.org/list/cs.LG/recent">ArXiv:cs.LG</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="plainlist" style="padding:0.3em 0.4em 0.3em;font-weight:bold;border-top: 1px solid #aaa; border-bottom: 1px solid #aaa;border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul>
+<li><span class="metadata"><img alt="" src="./EL14_files/16px-Portal-puzzle.svg.png" width="16" height="14" srcset="//upload.wikimedia.org/wikipedia/en/thumb/f/fd/Portal-puzzle.svg/24px-Portal-puzzle.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/fd/Portal-puzzle.svg/32px-Portal-puzzle.svg.png 2x" data-file-width="32" data-file-height="28"> <a href="https://en.wikipedia.org/wiki/Portal:Machine_learning" title="Portal:Machine learning">Machine learning portal</a></span></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;font-size:115%;padding-top: 0.6em;">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="https://en.wikipedia.org/wiki/Template:Machine_learning_bar" title="Template:Machine learning bar"><abbr title="View this template">v</abbr></a></li>
+<li class="nv-talk"><a href="https://en.wikipedia.org/wiki/Template_talk:Machine_learning_bar" title="Template talk:Machine learning bar"><abbr title="Discuss this template">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Machine_learning_bar&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+<p><b>Random forests</b> or random decision forests<sup id="cite_ref-ho1995_1-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1995-1">[1]</a></sup><sup id="cite_ref-ho1998_2-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1998-2">[2]</a></sup> are an <a href="https://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">ensemble learning</a> method for <a href="https://en.wikipedia.org/wiki/Statistical_classification" title="Statistical classification">classification</a>, <a href="https://en.wikipedia.org/wiki/Regression_analysis" title="Regression analysis">regression</a> and other tasks, that operate by constructing a multitude of <a href="https://en.wikipedia.org/wiki/Decision_tree_learning" title="Decision tree learning">decision trees</a> at training time and outputting the class that is the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" title="Mode (statistics)">mode</a> of the classes (classification) or mean prediction (regression) of the individual trees. Random decision forests correct for decision trees' habit of <a href="https://en.wikipedia.org/wiki/Overfitting" title="Overfitting">overfitting</a> to their training set.<sup id="cite_ref-elemstatlearn_3-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-elemstatlearn-3">[3]</a></sup><sup class="reference" style="white-space:nowrap;">:587–588</sup></p>
+<p>The first algorithm for random decision forests was created by Tin Kam Ho <sup id="cite_ref-ho1995_1-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1995-1">[1]</a></sup> using the <a href="https://en.wikipedia.org/wiki/Random_subspace_method" title="Random subspace method">random subspace method</a>,<sup id="cite_ref-ho1998_2-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1998-2">[2]</a></sup> which, in Ho's formulation, is a way to implement the "stochastic discrimination" approach to classification proposed by Eugene Kleinberg.<sup id="cite_ref-kleinberg1996_4-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-kleinberg1996-4">[4]</a></sup><sup id="cite_ref-kleinberg2000_5-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-kleinberg2000-5">[5]</a></sup><sup id="cite_ref-kleinbergurl_6-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-kleinbergurl-6">[6]</a></sup></p>
+<p>An extension of the algorithm was developed by <a href="https://en.wikipedia.org/wiki/Leo_Breiman" title="Leo Breiman">Leo Breiman</a><sup id="cite_ref-breiman2001_7-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-breiman2001-7">[7]</a></sup> and Adele Cutler,<sup id="cite_ref-rpackage_8-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-rpackage-8">[8]</a></sup> and "Random Forests" is their <a href="https://en.wikipedia.org/wiki/Trademark" title="Trademark">trademark</a>.<sup id="cite_ref-9" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-9">[9]</a></sup> The extension combines Breiman's "<a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">bagging</a>" idea and random selection of features, introduced first by Ho<sup id="cite_ref-ho1995_1-2" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1995-1">[1]</a></sup> and later independently by Amit and <a href="https://en.wikipedia.org/wiki/Donald_Geman" title="Donald Geman">Geman</a><sup id="cite_ref-amitgeman1997_10-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-amitgeman1997-10">[10]</a></sup> in order to construct a collection of decision trees with controlled variance.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikipedia.org/wiki/Random_forest#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="https://en.wikipedia.org/wiki/Random_forest#Algorithm"><span class="tocnumber">2</span> <span class="toctext">Algorithm</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="https://en.wikipedia.org/wiki/Random_forest#Preliminaries:_decision_tree_learning"><span class="tocnumber">2.1</span> <span class="toctext">Preliminaries: decision tree learning</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="https://en.wikipedia.org/wiki/Random_forest#Tree_bagging"><span class="tocnumber">2.2</span> <span class="toctext">Tree bagging</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="https://en.wikipedia.org/wiki/Random_forest#From_bagging_to_random_forests"><span class="tocnumber">2.3</span> <span class="toctext">From bagging to random forests</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="https://en.wikipedia.org/wiki/Random_forest#ExtraTrees"><span class="tocnumber">2.4</span> <span class="toctext">ExtraTrees</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="https://en.wikipedia.org/wiki/Random_forest#Properties"><span class="tocnumber">3</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="https://en.wikipedia.org/wiki/Random_forest#Variable_importance"><span class="tocnumber">3.1</span> <span class="toctext">Variable importance</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="https://en.wikipedia.org/wiki/Random_forest#Relationship_to_nearest_neighbors"><span class="tocnumber">3.2</span> <span class="toctext">Relationship to nearest neighbors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="https://en.wikipedia.org/wiki/Random_forest#Unsupervised_learning_with_random_forests"><span class="tocnumber">4</span> <span class="toctext">Unsupervised learning with random forests</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="https://en.wikipedia.org/wiki/Random_forest#Variants"><span class="tocnumber">5</span> <span class="toctext">Variants</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="https://en.wikipedia.org/wiki/Random_forest#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="https://en.wikipedia.org/wiki/Random_forest#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="https://en.wikipedia.org/wiki/Random_forest#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The general method of random decision forests was first proposed by Ho in 1995,<sup id="cite_ref-ho1995_1-3" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1995-1">[1]</a></sup> who established that forests of trees splitting with oblique hyperplanes, if randomly restricted to be sensitive to only selected feature dimensions, can gain accuracy as they grow without suffering from overtraining. A subsequent work along the same lines <sup id="cite_ref-ho1998_2-2" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1998-2">[2]</a></sup> concluded that other splitting methods, as long as they are randomly forced to be insensitive to some feature dimensions, behave similarly. Note that this observation of a more complex classifier (a larger forest) getting more accurate nearly monotonically is in sharp contrast to the common belief that the complexity of a classifier can only grow to a certain level before accuracy being hurt by overfitting. The explanation of the forest method's resistance to overtraining can be found in Kleinberg's theory of stochastic discrimination.<sup id="cite_ref-kleinberg1996_4-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-kleinberg1996-4">[4]</a></sup><sup id="cite_ref-kleinberg2000_5-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-kleinberg2000-5">[5]</a></sup><sup id="cite_ref-kleinbergurl_6-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-kleinbergurl-6">[6]</a></sup></p>
+<p>The early development of Breiman's notion of random forests was influenced by the work of Amit and Geman<sup id="cite_ref-amitgeman1997_10-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-amitgeman1997-10">[10]</a></sup> who introduced the idea of searching over a random subset of the available decisions when splitting a node, in the context of growing a single <a href="https://en.wikipedia.org/wiki/Decision_tree" title="Decision tree">tree</a>. The idea of random subspace selection from Ho<sup id="cite_ref-ho1998_2-3" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho1998-2">[2]</a></sup> was also influential in the design of random forests. In this method a forest of trees is grown, and variation among the trees is introduced by projecting the training data into a randomly chosen <a href="https://en.wikipedia.org/wiki/Linear_subspace" title="Linear subspace">subspace</a> before fitting each tree or each node. Finally, the idea of randomized node optimization, where the decision at each node is selected by a randomized procedure, rather than a deterministic optimization was first introduced by Dietterich.<sup id="cite_ref-11" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-11">[11]</a></sup></p>
+<p>The introduction of random forests proper was first made in a paper by <a href="https://en.wikipedia.org/wiki/Leo_Breiman" title="Leo Breiman">Leo Breiman</a>.<sup id="cite_ref-breiman2001_7-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-breiman2001-7">[7]</a></sup> This paper describes a method of building a forest of uncorrelated trees using a <a href="https://en.wikipedia.org/wiki/Classification_and_regression_tree" class="mw-redirect" title="Classification and regression tree">CART</a> like procedure, combined with randomized node optimization and <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">bagging</a>. In addition, this paper combines several ingredients, some previously known and some novel, which form the basis of the modern practice of random forests, in particular:</p>
+<ol>
+<li>Using <a href="https://en.wikipedia.org/wiki/Out-of-bag_error" title="Out-of-bag error">out-of-bag error</a> as an estimate of the <a href="https://en.wikipedia.org/wiki/Generalization_error" title="Generalization error">generalization error</a>.</li>
+<li>Measuring variable importance through permutation.</li>
+</ol>
+<p>The report also offers the first theoretical result for random forests in the form of a bound on the <a href="https://en.wikipedia.org/wiki/Generalization_error" title="Generalization error">generalization error</a> which depends on the strength of the trees in the forest and their <a href="https://en.wikipedia.org/wiki/Correlation" class="mw-redirect" title="Correlation">correlation</a>.</p>
+<h2><span class="mw-headline" id="Algorithm">Algorithm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=2" title="Edit section: Algorithm">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Preliminaries:_decision_tree_learning">Preliminaries: decision tree learning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=3" title="Edit section: Preliminaries: decision tree learning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div role="note" class="hatnote">Main article: <a href="https://en.wikipedia.org/wiki/Decision_tree_learning" title="Decision tree learning">Decision tree learning</a></div>
+<p>Decision trees are a popular method for various machine learning tasks. Tree learning "come[s] closest to meeting the requirements for serving as an off-the-shelf procedure for data mining", say <a href="https://en.wikipedia.org/wiki/Trevor_Hastie" title="Trevor Hastie">Hastie</a> <i>et al.</i>, because it is invariant under scaling and various other transformations of feature values, is robust to inclusion of irrelevant features, and produces inspectable models. However, they are seldom accurate.<sup id="cite_ref-elemstatlearn_3-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-elemstatlearn-3">[3]</a></sup><sup class="reference" style="white-space:nowrap;">:352</sup></p>
+<p>In particular, trees that are grown very deep tend to learn highly irregular patterns: they <a href="https://en.wikipedia.org/wiki/Overfitting" title="Overfitting">overfit</a> their training sets, because they have <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff" title="Bias–variance tradeoff">low bias, but very high variance</a>. Random forests are a way of averaging multiple deep decision trees, trained on different parts of the same training set, with the goal of reducing the variance.<sup id="cite_ref-elemstatlearn_3-2" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-elemstatlearn-3">[3]</a></sup><sup class="reference" style="white-space:nowrap;">:587–588</sup> This comes at the expense of a small increase in the bias and some loss of interpretability, but generally greatly boosts the performance of the final model.</p>
+<h3><span class="mw-headline" id="Tree_bagging">Tree bagging</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=4" title="Edit section: Tree bagging">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div role="note" class="hatnote">Main article: <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">Bootstrap aggregating</a></div>
+<p>The training algorithm for random forests applies the general technique of <a href="https://en.wikipedia.org/wiki/Bootstrap_aggregating" title="Bootstrap aggregating">bootstrap aggregating</a>, or bagging, to tree learners. Given a training set <span class="texhtml mvar" style="font-style:italic;">X</span> = <span class="texhtml mvar" style="font-style:italic;">x<sub>1</sub></span>, ..., <span class="texhtml mvar" style="font-style:italic;">x<sub>n</sub></span> with responses <span class="texhtml mvar" style="font-style:italic;">Y</span> = <span class="texhtml mvar" style="font-style:italic;">y<sub>1</sub></span>, ..., <span class="texhtml mvar" style="font-style:italic;">y<sub>n</sub></span>, bagging repeatedly (<i>B</i> times) selects a <a href="https://en.wikipedia.org/wiki/Bootstrapping_(statistics)" title="Bootstrapping (statistics)">random sample with replacement</a> of the training set and fits trees to these samples:</p>
+<dl>
+<dd>For <span class="texhtml mvar" style="font-style:italic;">b</span> = 1, ..., <span class="texhtml mvar" style="font-style:italic;">B</span>:
+<ol>
+<li>Sample, with replacement, <span class="texhtml mvar" style="font-style:italic;">n</span> training examples from <span class="texhtml mvar" style="font-style:italic;">X</span>, <span class="texhtml mvar" style="font-style:italic;">Y</span>; call these <span class="texhtml mvar" style="font-style:italic;">X<sub>b</sub></span>, <span class="texhtml mvar" style="font-style:italic;">Y<sub>b</sub></span>.</li>
+<li>Train a decision or regression tree <span class="texhtml mvar" style="font-style:italic;">f<sub>b</sub></span> on <span class="texhtml mvar" style="font-style:italic;">X<sub>b</sub></span>, <span class="texhtml mvar" style="font-style:italic;">Y<sub>b</sub></span>.</li>
+</ol>
+</dd>
+</dl>
+<p>After training, predictions for unseen samples <span class="texhtml mvar" style="font-style:italic;">x'</span> can be made by averaging the predictions from all the individual regression trees on <span class="texhtml mvar" style="font-style:italic;">x'</span>:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>f</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mi>B</mi>
+          </mfrac>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>b</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>B</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mover>
+                <mi>f</mi>
+                <mo stretchy="false">^<!-- ^ --></mo>
+              </mover>
+            </mrow>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>b</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>x</mi>
+          <mo>′</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {f}}={\frac {1}{B}}\sum _{b=1}^{B}{\hat {f}}_{b}(x')}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/83804cb891c439983c8e364f24025d66a9af0b62" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.171ex; width:18.086ex; height:7.509ex;" alt="{\hat {f}}={\frac {1}{B}}\sum _{b=1}^{B}{\hat {f}}_{b}(x&#39;)"></span></dd>
+</dl>
+<p>or by taking the majority vote in the case of decision trees.</p>
+<p>This bootstrapping procedure leads to better model performance because it decreases the <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_dilemma" class="mw-redirect" title="Bias–variance dilemma">variance</a> of the model, without increasing the bias. This means that while the predictions of a single tree are highly sensitive to noise in its training set, the average of many trees is not, as long as the trees are not correlated. Simply training many trees on a single training set would give strongly correlated trees (or even the same tree many times, if the training algorithm is deterministic); bootstrap sampling is a way of de-correlating the trees by showing them different training sets.</p>
+<p>The number of samples/trees, <span class="texhtml mvar" style="font-style:italic;">B</span>, is a free parameter. Typically, a few hundred to several thousand trees are used, depending on the size and nature of the training set. An optimal number of trees <span class="texhtml mvar" style="font-style:italic;">B</span> can be found using cross-validation, or by observing the <i><a href="https://en.wikipedia.org/wiki/Out-of-bag_error" title="Out-of-bag error">out-of-bag error</a></i>: the mean prediction error on each training sample <span class="texhtml mvar" style="font-style:italic;">xᵢ</span>, using only the trees that did not have <span class="texhtml mvar" style="font-style:italic;">xᵢ</span> in their bootstrap sample.<sup id="cite_ref-islr_12-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-islr-12">[12]</a></sup> The training and test error tend to level off after some number of trees have been fit.</p>
+<h3><span class="mw-headline" id="From_bagging_to_random_forests">From bagging to random forests</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=5" title="Edit section: From bagging to random forests">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div role="note" class="hatnote">Main article: <a href="https://en.wikipedia.org/wiki/Random_subspace_method" title="Random subspace method">Random subspace method</a></div>
+<p>The above procedure describes the original bagging algorithm for trees. Random forests differ in only one way from this general scheme: they use a modified tree learning algorithm that selects, at each candidate split in the learning process, a <a href="https://en.wikipedia.org/wiki/Random_subspace_method" title="Random subspace method">random subset of the features</a>. This process is sometimes called "feature bagging". The reason for doing this is the correlation of the trees in an ordinary bootstrap sample: if one or a few features are very strong predictors for the response variable (target output), these features will be selected in many of the <span class="texhtml mvar" style="font-style:italic;">B</span> trees, causing them to become correlated. An analysis of how bagging and random subspace projection contribute to accuracy gains under different conditions is given by Ho.<sup id="cite_ref-ho2002_13-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-ho2002-13">[13]</a></sup></p>
+<p>Typically, for a classification problem with <span class="texhtml mvar" style="font-style:italic;">p</span> features, <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;"><span class="texhtml mvar" style="font-style:italic;">p</span></span></span> (rounded down) features are used in each split.<sup id="cite_ref-elemstatlearn_3-3" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-elemstatlearn-3">[3]</a></sup><sup class="reference" style="white-space:nowrap;">:592</sup> For regression problems the inventors recommend <span class="texhtml mvar" style="font-style:italic;">p/3</span> (rounded down) with a minimum node size of 5 as the default.<sup id="cite_ref-elemstatlearn_3-4" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-elemstatlearn-3">[3]</a></sup><sup class="reference" style="white-space:nowrap;">:592</sup></p>
+<h3><span class="mw-headline" id="ExtraTrees">ExtraTrees</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=6" title="Edit section: ExtraTrees">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Adding one further step of randomization yields <i>extremely randomized trees</i>, or ExtraTrees. These are trained using bagging and the random subspace method, like in an ordinary random forest, but additionally the top-down splitting in the tree learner is randomized. Instead of computing the locally <i>optimal</i> feature/split combination (based on, e.g., <a href="https://en.wikipedia.org/wiki/Information_gain" class="mw-redirect" title="Information gain">information gain</a> or the <a href="https://en.wikipedia.org/wiki/Gini_impurity" class="mw-redirect" title="Gini impurity">Gini impurity</a>), for each feature under consideration, a random value is selected for the split. This value is selected from the feature's empirical range (in the tree's training set, i.e., the bootstrap sample)<sup id="cite_ref-14" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-14">[14]</a></sup></p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=7" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Variable_importance">Variable importance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=8" title="Edit section: Variable importance">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Random forests can be used to rank the importance of variables in a regression or classification problem in a natural way. The following technique was described in Breiman's original paper<sup id="cite_ref-breiman2001_7-2" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-breiman2001-7">[7]</a></sup> and is implemented in the <a href="https://en.wikipedia.org/wiki/R_(programming_language)" title="R (programming language)">R</a> package randomForest.<sup id="cite_ref-rpackage_8-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-rpackage-8">[8]</a></sup></p>
+<p>The first step in measuring the variable importance in a data set <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">D</mi>
+            </mrow>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>X</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>Y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <msubsup>
+          <mo fence="false" stretchy="false">}</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msubsup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\mathcal {D}}_{n}=\{(X_{i},Y_{i})\}_{i=1}^{n}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/ee98824c21c5539b16d0c560a1445101f74898ba" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:19.19ex; height:3.009ex;" alt="{\mathcal {D}}_{n}=\{(X_{i},Y_{i})\}_{i=1}^{n}"></span> is to fit a random forest to the data. During the fitting process the <a href="https://en.wikipedia.org/wiki/Out-of-bag_error" title="Out-of-bag error">out-of-bag error</a> for each data point is recorded and averaged over the forest (errors on an independent test set can be substituted if bagging is not used during training).</p>
+<p>To measure the importance of the <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/2f461e54f5c093e92a55547b9764291390f0b5d0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.016ex; width:0.985ex; height:2.509ex;" alt="j"></span>-th feature after training, the values of the <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/2f461e54f5c093e92a55547b9764291390f0b5d0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.016ex; width:0.985ex; height:2.509ex;" alt="j"></span>-th feature are permuted among the training data and the out-of-bag error is again computed on this perturbed data set. The importance score for the <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/2f461e54f5c093e92a55547b9764291390f0b5d0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.016ex; width:0.985ex; height:2.509ex;" alt="j"></span>-th feature is computed by averaging the difference in out-of-bag error before and after the permutation over all trees. The score is normalized by the standard deviation of these differences.</p>
+<p>Features which produce large values for this score are ranked as more important than features which produce small values.</p>
+<p>This method of determining variable importance has some drawbacks. For data including categorical variables with different number of levels, random forests are biased in favor of those attributes with more levels. Methods such as <a href="https://en.wikipedia.org/wiki/Partial_permutation" title="Partial permutation">partial permutations</a><sup id="cite_ref-15" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-15">[15]</a></sup><sup id="cite_ref-16" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-16">[16]</a></sup> and growing unbiased trees<sup id="cite_ref-17" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-17">[17]</a></sup> can be used to solve the problem. If the data contain groups of correlated features of similar relevance for the output, then smaller groups are favored over larger groups.<sup id="cite_ref-18" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-18">[18]</a></sup></p>
+<h3><span class="mw-headline" id="Relationship_to_nearest_neighbors">Relationship to nearest neighbors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=9" title="Edit section: Relationship to nearest neighbors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A relationship between random forests and the <a href="https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm" class="mw-redirect" title="K-nearest neighbor algorithm"><span class="texhtml mvar" style="font-style:italic;">k</span>-nearest neighbor algorithm</a> (<span class="texhtml mvar" style="font-style:italic;">k</span>-NN) was pointed out by Lin and Jeon in 2002.<sup id="cite_ref-linjeon02_19-0" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-linjeon02-19">[19]</a></sup> It turns out that both can be viewed as so-called <i>weighted neighborhoods schemes</i>. These are models built from a training set <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">{</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <msubsup>
+          <mo fence="false" stretchy="false">}</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msubsup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \{(x_{i},y_{i})\}_{i=1}^{n}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/0a9e0a59cd73d8fb11a10caa787512bf93af04b4" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:12.247ex; height:3.009ex;" alt="\{(x_{i},y_{i})\}_{i=1}^{n}"></span> that make predictions <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>y</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {y}}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/3dc8de3d8ea01304329ef9518fad7a6d196c4c01" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.313ex; height:2.676ex;" alt="{\hat {y}}"></span> for new points <span class="texhtml mvar" style="font-style:italic;">x'</span> by looking at the "neighborhood" of the point, formalized by a weight function <span class="texhtml mvar" style="font-style:italic;">W</span>:</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>y</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>W</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msup>
+          <mi>x</mi>
+          <mo>′</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <mspace width="thinmathspace"></mspace>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {y}}=\sum _{i=1}^{n}W(x_{i},x')\,y_{i}.}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/f9cd87e3168f0200bd67d04530ab9124dcb8cafc" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:20.675ex; height:7.009ex;" alt="{\hat {y}}=\sum _{i=1}^{n}W(x_{i},x&#39;)\,y_{i}."></span></dd>
+</dl>
+<p>Here, <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>W</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msup>
+          <mi>x</mi>
+          <mo>′</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle W(x_{i},x')}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/f87df356c5a2445516fca56d2df6eb73e64e48ce" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:9.5ex; height:3.009ex;" alt="W(x_{i},x&#39;)"></span> is the non-negative weight of the <span class="texhtml mvar" style="font-style:italic;">i</span>'th training point relative to the new point <span class="texhtml mvar" style="font-style:italic;">x'</span>. For any particular <span class="texhtml mvar" style="font-style:italic;">x'</span>, the weights must sum to one. Weight functions are given as follows:</p>
+<ul>
+<li>In <span class="texhtml mvar" style="font-style:italic;">k</span>-NN, the weights are <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>W</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msup>
+          <mi>x</mi>
+          <mo>′</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mi>k</mi>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle W(x_{i},x')={\frac {1}{k}}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/ae3098adcbde36fd1253a0ee85a3868d67b1861f" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.005ex; width:14.666ex; height:5.343ex;" alt="W(x_{i},x&#39;)={\frac {1}{k}}"></span> if <span class="texhtml mvar" style="font-style:italic;">x<sub>i</sub></span> is one of the <span class="texhtml mvar" style="font-style:italic;">k</span> points closest to <span class="texhtml mvar" style="font-style:italic;">x'</span>, and zero otherwise.</li>
+<li>In a tree, <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>W</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msup>
+          <mi>x</mi>
+          <mo>′</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <msup>
+              <mi>k</mi>
+              <mo>′</mo>
+            </msup>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle W(x_{i},x')={\frac {1}{k'}}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/d80899c24f8d4488f56290ae99cfe61558667873" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.005ex; width:15.359ex; height:5.343ex;" alt="W(x_{i},x&#39;)={\frac {1}{k&#39;}}"></span> if <span class="texhtml mvar" style="font-style:italic;">x<sub>i</sub></span> is one of the <span class="texhtml mvar" style="font-style:italic;">k'</span> points in the same leaf as <span class="texhtml mvar" style="font-style:italic;">x'</span>, and zero otherwise.</li>
+</ul>
+<p>Since a forest averages the predictions of a set of <span class="texhtml mvar" style="font-style:italic;">m</span> trees with individual weight functions <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>W</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle W_{j}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/fa98874e6beb16373e8d0e056ba550cf653676a1" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.121ex; height:2.843ex;" alt="W_{j}"></span>, its predictions are</p>
+<dl>
+<dd><span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>y</mi>
+              <mo stretchy="false">^<!-- ^ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mi>m</mi>
+          </mfrac>
+        </mrow>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>m</mi>
+          </mrow>
+        </munderover>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>W</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <msup>
+          <mi>x</mi>
+          <mo>′</mo>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <mspace width="thinmathspace"></mspace>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mrow>
+          <mo>(</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mfrac>
+              <mn>1</mn>
+              <mi>m</mi>
+            </mfrac>
+          </mrow>
+          <munderover>
+            <mo>∑<!-- ∑ --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>j</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>m</mi>
+            </mrow>
+          </munderover>
+          <msub>
+            <mi>W</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>j</mi>
+            </mrow>
+          </msub>
+          <mo stretchy="false">(</mo>
+          <msub>
+            <mi>x</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+          <mo>,</mo>
+          <msup>
+            <mi>x</mi>
+            <mo>′</mo>
+          </msup>
+          <mo stretchy="false">)</mo>
+          <mo>)</mo>
+        </mrow>
+        <mspace width="thinmathspace"></mspace>
+        <msub>
+          <mi>y</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\hat {y}}={\frac {1}{m}}\sum _{j=1}^{m}\sum _{i=1}^{n}W_{j}(x_{i},x')\,y_{i}=\sum _{i=1}^{n}\left({\frac {1}{m}}\sum _{j=1}^{m}W_{j}(x_{i},x')\right)\,y_{i}.}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/8b819eff4f3bb5ee472825d9996c3fd5f6b18ed7" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.338ex; width:58.874ex; height:7.676ex;" alt="{\hat {y}}={\frac {1}{m}}\sum _{j=1}^{m}\sum _{i=1}^{n}W_{j}(x_{i},x&#39;)\,y_{i}=\sum _{i=1}^{n}\left({\frac {1}{m}}\sum _{j=1}^{m}W_{j}(x_{i},x&#39;)\right)\,y_{i}."></span></dd>
+</dl>
+<p>This shows that the whole forest is again a weighted neighborhood scheme, with weights that average those of the individual trees. The neighbors of <span class="texhtml mvar" style="font-style:italic;">x'</span> in this interpretation are the points <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{i}}</annotation>
+  </semantics>
+</math></span><img src="./EL14_files/e87000dd6142b81d041896a30fe58f0c3acb2158" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:2.147ex; height:2.009ex;" alt="x_{i}"></span> which fall in the same leaf as <span class="texhtml mvar" style="font-style:italic;">x'</span> in at least one tree of the forest. In this way, the neighborhood of <span class="texhtml mvar" style="font-style:italic;">x'</span> depends in a complex way on the structure of the trees, and thus on the structure of the training set. Lin and Jeon show that the shape of the neighborhood used by a random forest adapts to the local importance of each feature.<sup id="cite_ref-linjeon02_19-1" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-linjeon02-19">[19]</a></sup></p>
+<h2><span class="mw-headline" id="Unsupervised_learning_with_random_forests">Unsupervised learning with random forests</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=10" title="Edit section: Unsupervised learning with random forests">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>As part of their construction, RF predictors naturally lead to a dissimilarity measure between the observations. One can also define an RF dissimilarity measure between unlabeled data: the idea is to construct an RF predictor that distinguishes the “observed” data from suitably generated synthetic data.<sup id="cite_ref-breiman2001_7-3" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-breiman2001-7">[7]</a></sup><sup id="cite_ref-20" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-20">[20]</a></sup> The observed data are the original unlabeled data and the synthetic data are drawn from a reference distribution. An RF dissimilarity can be attractive because it handles mixed variable types well, is invariant to monotonic transformations of the input variables, and is robust to outlying observations. The RF dissimilarity easily deals with a large number of semi-continuous variables due to its intrinsic variable selection; for example, the "Addcl 1" RF dissimilarity weighs the contribution of each variable according to how dependent it is on other variables. The RF dissimilarity has been used in a variety of applications, e.g. to find clusters of patients based on tissue marker data.<sup id="cite_ref-21" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-21">[21]</a></sup></p>
+<h2><span class="mw-headline" id="Variants">Variants</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=11" title="Edit section: Variants">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Instead of decision trees, linear models have been proposed and evaluated as base estimators in random forests, in particular <a href="https://en.wikipedia.org/wiki/Multinomial_logistic_regression" title="Multinomial logistic regression">multinomial logistic regression</a> and <a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier" title="Naive Bayes classifier">naive Bayes classifiers</a>.<sup id="cite_ref-22" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-22">[22]</a></sup><sup id="cite_ref-23" class="reference"><a href="https://en.wikipedia.org/wiki/Random_forest#cite_note-23">[23]</a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=12" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Decision_tree_learning" title="Decision tree learning">Decision tree learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Gradient_boosting" title="Gradient boosting">Gradient boosting</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Randomized_algorithm" title="Randomized algorithm">Randomized algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ensemble_learning" title="Ensemble learning">Ensemble learning</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Boosting_(machine_learning)" title="Boosting (machine learning)">Boosting</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Non-parametric_statistics" class="mw-redirect" title="Non-parametric statistics">Non-parametric statistics</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Kernel_random_forest" title="Kernel random forest">Kernel random forest</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=13" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist columns references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-ho1995-1"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1995_1-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1995_1-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1995_1-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1995_1-3"><sup><i><b>d</b></i></sup></a></span> <span class="reference-text"><cite class="citation conference">Ho, Tin Kam (1995). <a rel="nofollow" class="external text" href="http://ect.bell-labs.com/who/tkh/publications/papers/odt.pdf"><i>Random Decision Forests</i></a> <span style="font-size:85%;">(PDF)</span>. Proceedings of the 3rd International Conference on Document Analysis and Recognition, Montreal, QC, 14–16 August 1995. pp.&nbsp;278–282.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.aufirst=Tin+Kam&amp;rft.aulast=Ho&amp;rft.btitle=Random+Decision+Forests&amp;rft.date=1995&amp;rft.genre=conference&amp;rft_id=http%3A%2F%2Fect.bell-labs.com%2Fwho%2Ftkh%2Fpublications%2Fpapers%2Fodt.pdf&amp;rft.pages=278-282&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-ho1998-2"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1998_2-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1998_2-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1998_2-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho1998_2-3"><sup><i><b>d</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal">Ho, Tin Kam (1998). <a rel="nofollow" class="external text" href="http://ect.bell-labs.com/who/tkh/publications/papers/df.pdf">"The Random Subspace Method for Constructing Decision Forests"</a> <span style="font-size:85%;">(PDF)</span>. <i>IEEE Transactions on Pattern Analysis and Machine Intelligence</i>. <b>20</b> (8): 832–844. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1109%2F34.709601">10.1109/34.709601</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=The+Random+Subspace+Method+for+Constructing+Decision+Forests&amp;rft.aufirst=Tin+Kam&amp;rft.aulast=Ho&amp;rft.date=1998&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fect.bell-labs.com%2Fwho%2Ftkh%2Fpublications%2Fpapers%2Fdf.pdf&amp;rft_id=info%3Adoi%2F10.1109%2F34.709601&amp;rft.issue=8&amp;rft.jtitle=IEEE+Transactions+on+Pattern+Analysis+and+Machine+Intelligence&amp;rft.pages=832-844&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=20" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-elemstatlearn-3"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-elemstatlearn_3-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-elemstatlearn_3-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-elemstatlearn_3-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-elemstatlearn_3-3"><sup><i><b>d</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-elemstatlearn_3-4"><sup><i><b>e</b></i></sup></a></span> <span class="reference-text"><cite class="citation book"><a href="https://en.wikipedia.org/wiki/Trevor_Hastie" title="Trevor Hastie">Hastie, Trevor</a>; <a href="https://en.wikipedia.org/wiki/Robert_Tibshirani" title="Robert Tibshirani">Tibshirani, Robert</a>; <a href="https://en.wikipedia.org/wiki/Jerome_H._Friedman" title="Jerome H. Friedman">Friedman, Jerome</a> (2008). <a rel="nofollow" class="external text" href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/"><i>The Elements of Statistical Learning</i></a> (2nd ed.). Springer. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-387-95284-5" title="Special:BookSources/0-387-95284-5">0-387-95284-5</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.aufirst=Trevor&amp;rft.au=Friedman%2C+Jerome&amp;rft.aulast=Hastie&amp;rft.au=Tibshirani%2C+Robert&amp;rft.btitle=The+Elements+of+Statistical+Learning&amp;rft.date=2008&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww-stat.stanford.edu%2F~tibs%2FElemStatLearn%2F&amp;rft.isbn=0-387-95284-5&amp;rft.pub=Springer&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-kleinberg1996-4"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-kleinberg1996_4-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-kleinberg1996_4-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal">Kleinberg, Eugene (1996). <a rel="nofollow" class="external text" href="http://kappa.math.buffalo.edu/aos.pdf">"An Overtraining-Resistant Stochastic Modeling Method for Pattern Recognition"</a> <span style="font-size:85%;">(PDF)</span>. <i><a href="https://en.wikipedia.org/wiki/Annals_of_Statistics" title="Annals of Statistics">Annals of Statistics</a></i>. <b>24</b> (6): 2319–2349. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1214%2Faos%2F1032181157">10.1214/aos/1032181157</a>. <a href="https://en.wikipedia.org/wiki/Mathematical_Reviews" title="Mathematical Reviews">MR</a>&nbsp;<a rel="nofollow" class="external text" href="https://www.ams.org/mathscinet-getitem?mr=1425956">1425956</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=An+Overtraining-Resistant+Stochastic+Modeling+Method+for+Pattern+Recognition&amp;rft.aufirst=Eugene&amp;rft.aulast=Kleinberg&amp;rft.date=1996&amp;rft.genre=article&amp;rft_id=%2F%2Fwww.ams.org%2Fmathscinet-getitem%3Fmr%3D1425956&amp;rft_id=http%3A%2F%2Fkappa.math.buffalo.edu%2Faos.pdf&amp;rft_id=info%3Adoi%2F10.1214%2Faos%2F1032181157&amp;rft.issue=6&amp;rft.jtitle=Annals+of+Statistics&amp;rft.pages=2319-2349&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=24" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-kleinberg2000-5"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-kleinberg2000_5-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-kleinberg2000_5-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal">Kleinberg, Eugene (2000). <a rel="nofollow" class="external text" href="http://kappa.math.buffalo.edu/473.pdf">"On the Algorithmic Implementation of Stochastic Discrimination"</a> <span style="font-size:85%;">(PDF)</span>. <i>IEEE Transactions on PAMI</i>. <b>22</b> (5).</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=On+the+Algorithmic+Implementation+of+Stochastic+Discrimination&amp;rft.aufirst=Eugene&amp;rft.aulast=Kleinberg&amp;rft.date=2000&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fkappa.math.buffalo.edu%2F473.pdf&amp;rft.issue=5&amp;rft.jtitle=IEEE+Transactions+on+PAMI&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=22" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-kleinbergurl-6"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-kleinbergurl_6-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-kleinbergurl_6-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal">Kleinberg, Eugine. <a rel="nofollow" class="external text" href="http://kappa.math.buffalo.edu/">"Stochastic Discrimination and its Implementation"</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Stochastic+Discrimination+and+its+Implementation&amp;rft.aufirst=Eugine&amp;rft.aulast=Kleinberg&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fkappa.math.buffalo.edu%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-breiman2001-7"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-breiman2001_7-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-breiman2001_7-1"><sup><i><b>b</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-breiman2001_7-2"><sup><i><b>c</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-breiman2001_7-3"><sup><i><b>d</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal"><a href="https://en.wikipedia.org/wiki/Leo_Breiman" title="Leo Breiman">Breiman, Leo</a> (2001). "Random Forests". <i><a href="https://en.wikipedia.org/wiki/Machine_Learning_(journal)" title="Machine Learning (journal)">Machine Learning</a></i>. <b>45</b> (1): 5–32. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1023%2FA%3A1010933404324">10.1023/A:1010933404324</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Random+Forests&amp;rft.aufirst=Leo&amp;rft.aulast=Breiman&amp;rft.date=2001&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1023%2FA%3A1010933404324&amp;rft.issue=1&amp;rft.jtitle=Machine+Learning&amp;rft.pages=5-32&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=45" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-rpackage-8"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-rpackage_8-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-rpackage_8-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation web">Liaw, Andy (16 October 2012). <a rel="nofollow" class="external text" href="https://cran.r-project.org/web/packages/randomForest/randomForest.pdf">"Documentation for R package randomForest"</a> <span style="font-size:85%;">(PDF)</span><span class="reference-accessdate">. Retrieved <span class="nowrap">15 March</span> 2013</span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.aufirst=Andy&amp;rft.aulast=Liaw&amp;rft.btitle=Documentation+for+R+package+randomForest&amp;rft.date=2012-10-16&amp;rft.genre=unknown&amp;rft_id=https%3A%2F%2Fcran.r-project.org%2Fweb%2Fpackages%2FrandomForest%2FrandomForest.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-9"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">U.S. trademark registration number 3185828, registered 2006/12/19.</span></li>
+<li id="cite_note-amitgeman1997-10"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-amitgeman1997_10-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-amitgeman1997_10-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation journal">Amit, Yali; <a href="https://en.wikipedia.org/wiki/Donald_Geman" title="Donald Geman">Geman, Donald</a> (1997). <a rel="nofollow" class="external text" href="http://www.cis.jhu.edu/publications/papers_in_database/GEMAN/shape.pdf">"Shape quantization and recognition with randomized trees"</a> <span style="font-size:85%;">(PDF)</span>. <i><a href="https://en.wikipedia.org/wiki/Neural_Computation_(journal)" title="Neural Computation (journal)">Neural Computation</a></i>. <b>9</b> (7): 1545–1588. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1162%2Fneco.1997.9.7.1545">10.1162/neco.1997.9.7.1545</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Shape+quantization+and+recognition+with+randomized+trees&amp;rft.aufirst=Yali&amp;rft.au=Geman%2C+Donald&amp;rft.aulast=Amit&amp;rft.date=1997&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.cis.jhu.edu%2Fpublications%2Fpapers_in_database%2FGEMAN%2Fshape.pdf&amp;rft_id=info%3Adoi%2F10.1162%2Fneco.1997.9.7.1545&amp;rft.issue=7&amp;rft.jtitle=Neural+Computation&amp;rft.pages=1545-1588&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=9" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-11"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Dietterich, Thomas (2000). "An Experimental Comparison of Three Methods for Constructing Ensembles of Decision Trees: Bagging, Boosting, and Randomization". <i><a href="https://en.wikipedia.org/wiki/Machine_Learning_(journal)" title="Machine Learning (journal)">Machine Learning</a></i>: 139–157.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=An+Experimental+Comparison+of+Three+Methods+for+Constructing+Ensembles+of+Decision+Trees%3A+Bagging%2C+Boosting%2C+and+Randomization&amp;rft.aufirst=Thomas&amp;rft.aulast=Dietterich&amp;rft.date=2000&amp;rft.genre=article&amp;rft.jtitle=Machine+Learning&amp;rft.pages=139-157&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-islr-12"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-islr_12-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation book">Gareth James; Daniela Witten; Trevor Hastie; Robert Tibshirani (2013). <a rel="nofollow" class="external text" href="http://www-bcf.usc.edu/~gareth/ISL/"><i>An Introduction to Statistical Learning</i></a>. Springer. pp.&nbsp;316–321.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.au=Daniela+Witten&amp;rft.au=Gareth+James&amp;rft.au=Robert+Tibshirani&amp;rft.au=Trevor+Hastie&amp;rft.btitle=An+Introduction+to+Statistical+Learning&amp;rft.date=2013&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fwww-bcf.usc.edu%2F~gareth%2FISL%2F&amp;rft.pages=316-321&amp;rft.pub=Springer&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-ho2002-13"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-ho2002_13-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Ho, Tin Kam (2002). <a rel="nofollow" class="external text" href="http://ect.bell-labs.com/who/tkh/publications/papers/compare.pdf">"A Data Complexity Analysis of Comparative Advantages of Decision Forest Constructors"</a> <span style="font-size:85%;">(PDF)</span>. <i>Pattern Analysis and Applications</i>: 102–112.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=A+Data+Complexity+Analysis+of+Comparative+Advantages+of+Decision+Forest+Constructors&amp;rft.aufirst=Tin+Kam&amp;rft.aulast=Ho&amp;rft.date=2002&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fect.bell-labs.com%2Fwho%2Ftkh%2Fpublications%2Fpapers%2Fcompare.pdf&amp;rft.jtitle=Pattern+Analysis+and+Applications&amp;rft.pages=102-112&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-14"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Geurts, P.; Ernst, D.; Wehenkel, L. (2006). <a rel="nofollow" class="external text" href="http://orbi.ulg.ac.be/bitstream/2268/9357/1/geurts-mlj-advance.pdf">"Extremely randomized trees"</a> <span style="font-size:85%;">(PDF)</span>. <i>Machine Learning</i>. <b>63</b>: 3–42. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1007%2Fs10994-006-6226-1">10.1007/s10994-006-6226-1</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Extremely+randomized+trees&amp;rft.au=Ernst%2C+D.&amp;rft.aufirst=P.&amp;rft.aulast=Geurts&amp;rft.au=Wehenkel%2C+L.&amp;rft.date=2006&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Forbi.ulg.ac.be%2Fbitstream%2F2268%2F9357%2F1%2Fgeurts-mlj-advance.pdf&amp;rft_id=info%3Adoi%2F10.1007%2Fs10994-006-6226-1&amp;rft.jtitle=Machine+Learning&amp;rft.pages=3-42&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=63" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-15"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation conference">Deng,H.; Runger, G.; Tuv, E. (2011). <i>Bias of importance measures for multi-valued attributes and solutions</i>. Proceedings of the 21st International Conference on Artificial Neural Networks (ICANN). pp.&nbsp;293–300.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.au=Deng%2CH.&amp;rft.au=Runger%2C+G.&amp;rft.au=Tuv%2C+E.&amp;rft.btitle=Bias+of+importance+measures+for+multi-valued+attributes+and+solutions&amp;rft.date=2011&amp;rft.genre=conference&amp;rft.pages=293-300&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-16"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Altmann A, Tolosi L, Sander O, Lengauer T (2010). <a rel="nofollow" class="external text" href="http://bioinformatics.oxfordjournals.org/content/early/2010/04/12/bioinformatics.btq134.abstract">"Permutation importance:a corrected feature importance measure"</a>. <i>Bioinformatics</i>. <b>26</b>: 1340–1347. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1093%2Fbioinformatics%2Fbtq134">10.1093/bioinformatics/btq134</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Permutation+importance%3Aa+corrected+feature+importance+measure&amp;rft.aufirst=A&amp;rft.aulast=Altmann&amp;rft.au=Lengauer%2C+T&amp;rft.au=Sander%2C+O&amp;rft.au=Tolosi%2C+L&amp;rft.date=2010&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fbioinformatics.oxfordjournals.org%2Fcontent%2Fearly%2F2010%2F04%2F12%2Fbioinformatics.btq134.abstract&amp;rft_id=info%3Adoi%2F10.1093%2Fbioinformatics%2Fbtq134&amp;rft.jtitle=Bioinformatics&amp;rft.pages=1340-1347&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=26" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-17"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Strobl, Carolin; Boulesteix, Anne-Laure; Augustin, Thomas (2007). <a rel="nofollow" class="external text" href="https://www.statistik.lmu.de/~carolin/research/CS_A-LB_TA_05.pdf">"Unbiased split selection for classification trees based on the Gini index"</a> <span style="font-size:85%;">(PDF)</span>. <i>Computational Statistics &amp; Data Analysis</i>: 483–501.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Unbiased+split+selection+for+classification+trees+based+on+the+Gini+index&amp;rft.au=Augustin%2C+Thomas&amp;rft.au=Boulesteix%2C+Anne-Laure&amp;rft.aufirst=Carolin&amp;rft.aulast=Strobl&amp;rft.date=2007&amp;rft.genre=article&amp;rft_id=https%3A%2F%2Fwww.statistik.lmu.de%2F~carolin%2Fresearch%2FCS_A-LB_TA_05.pdf&amp;rft.jtitle=Computational+Statistics+%26+Data+Analysis&amp;rft.pages=483-501&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-18"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Tolosi L, Lengauer T (2011). <a rel="nofollow" class="external text" href="http://bioinformatics.oxfordjournals.org/content/27/14/1986.abstract">"Classification with correlated features: unreliability of feature ranking and solutions."</a>. <i>Bioinformatics</i>. <b>27</b>: 1986–1994. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1093%2Fbioinformatics%2Fbtr300">10.1093/bioinformatics/btr300</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Classification+with+correlated+features%3A+unreliability+of+feature+ranking+and+solutions.&amp;rft.aufirst=L&amp;rft.aulast=Tolosi&amp;rft.au=Lengauer%2C+T&amp;rft.date=2011&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fbioinformatics.oxfordjournals.org%2Fcontent%2F27%2F14%2F1986.abstract&amp;rft_id=info%3Adoi%2F10.1093%2Fbioinformatics%2Fbtr300&amp;rft.jtitle=Bioinformatics&amp;rft.pages=1986-1994&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=27" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-linjeon02-19"><span class="mw-cite-backlink">^ <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-linjeon02_19-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-linjeon02_19-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation techreport">Lin, Yi; Jeon, Yongho (2002). <a rel="nofollow" class="external text" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.153.9168"><i>Random forests and adaptive nearest neighbors</i></a> (Technical report). Technical Report No. 1055. University of Wisconsin.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.aufirst=Yi&amp;rft.au=Jeon%2C+Yongho&amp;rft.aulast=Lin&amp;rft.btitle=Random+forests+and+adaptive+nearest+neighbors&amp;rft.date=2002&amp;rft.genre=report&amp;rft_id=http%3A%2F%2Fciteseerx.ist.psu.edu%2Fviewdoc%2Fsummary%3Fdoi%3D10.1.1.153.9168&amp;rft.pub=University+of+Wisconsin&amp;rft.series=Technical+Report+No.+1055&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-20"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Shi, T., Horvath, S. (2006). "Unsupervised Learning with Random Forest Predictors". <i>Journal of Computational and Graphical Statistics</i>. <b>15</b> (1): 118–138. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1198%2F106186006X94072">10.1198/106186006X94072</a>. <a href="https://en.wikipedia.org/wiki/JSTOR" title="JSTOR">JSTOR</a>&nbsp;<a rel="nofollow" class="external text" href="https://www.jstor.org/stable/27594168">27594168</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Unsupervised+Learning+with+Random+Forest+Predictors&amp;rft.date=2006&amp;rft.genre=article&amp;rft_id=%2F%2Fwww.jstor.org%2Fstable%2F27594168&amp;rft_id=info%3Adoi%2F10.1198%2F106186006X94072&amp;rft.issue=1&amp;rft.jtitle=Journal+of+Computational+and+Graphical+Statistics&amp;rft.pages=118-138&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=15" class="Z3988"><span style="display:none;">&nbsp;</span></span> <span class="citation-comment" style="display:none; color:#33aa33">CS1 maint: Uses authors parameter (<a href="https://en.wikipedia.org/wiki/Category:CS1_maint:_Uses_authors_parameter" title="Category:CS1 maint: Uses authors parameter">link</a>)</span></span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-21"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Shi, T., Seligson D., Belldegrun AS., Palotie A, Horvath, S. (2005). <a rel="nofollow" class="external text" href="http://www.nature.com/modpathol/journal/v18/n4/full/3800322a.html">"Tumor classification by tissue microarray profiling: random forest clustering applied to renal cell carcinoma"</a>. <i>Modern Pathology</i>. <b>18</b> (4): 547–557. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1038%2Fmodpathol.3800322">10.1038/modpathol.3800322</a>. <a href="https://en.wikipedia.org/wiki/PubMed_Identifier" class="mw-redirect" title="PubMed Identifier">PMID</a>&nbsp;<a rel="nofollow" class="external text" href="https://www.ncbi.nlm.nih.gov/pubmed/15529185">15529185</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Tumor+classification+by+tissue+microarray+profiling%3A+random+forest+clustering+applied+to+renal+cell+carcinoma&amp;rft.date=2005&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.nature.com%2Fmodpathol%2Fjournal%2Fv18%2Fn4%2Ffull%2F3800322a.html&amp;rft_id=info%3Adoi%2F10.1038%2Fmodpathol.3800322&amp;rft_id=info%3Apmid%2F15529185&amp;rft.issue=4&amp;rft.jtitle=Modern+Pathology&amp;rft.pages=547-557&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=18" class="Z3988"><span style="display:none;">&nbsp;</span></span> <span class="citation-comment" style="display:none; color:#33aa33">CS1 maint: Uses authors parameter (<a href="https://en.wikipedia.org/wiki/Category:CS1_maint:_Uses_authors_parameter" title="Category:CS1 maint: Uses authors parameter">link</a>)</span></span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-22"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Prinzie, A., Van den Poel, D. (2008). <a rel="nofollow" class="external text" href="http://dx.doi.org/10.1016/j.eswa.2007.01.029">"Random Forests for multiclass classification: Random MultiNomial Logit"</a>. <i>Expert Systems with Applications</i>. <b>34</b> (3): 1721–1732. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1016%2Fj.eswa.2007.01.029">10.1016/j.eswa.2007.01.029</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Random+Forests+for+multiclass+classification%3A+Random+MultiNomial+Logit&amp;rft.date=2008&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fdx.doi.org%2F10.1016%2Fj.eswa.2007.01.029&amp;rft_id=info%3Adoi%2F10.1016%2Fj.eswa.2007.01.029&amp;rft.issue=3&amp;rft.jtitle=Expert+Systems+with+Applications&amp;rft.pages=1721-1732&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=34" class="Z3988"><span style="display:none;">&nbsp;</span></span> <span class="citation-comment" style="display:none; color:#33aa33">CS1 maint: Uses authors parameter (<a href="https://en.wikipedia.org/wiki/Category:CS1_maint:_Uses_authors_parameter" title="Category:CS1 maint: Uses authors parameter">link</a>)</span></span></li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="https://en.wikipedia.org/wiki/Random_forest#cite_ref-23"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007/978-3-540-74469-6_35">Prinzie, A., Van den Poel, D. (2007). Random Multiclass Classification: Generalizing Random Forests to Random MNL and Random NB, Dexa 2007, Lecture Notes in Computer Science, 4653, 349–358.</a></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit&amp;section=14" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm">Random Forests classifier description</a> (Site of Leo Breiman)</li>
+<li><a rel="nofollow" class="external text" href="https://cran.r-project.org/doc/Rnews/Rnews_2002-3.pdf">Liaw, Andy &amp; Wiener, Matthew "Classification and Regression by randomForest" R News (2002) Vol. 2/3 p. 18</a> (Discussion of the use of the random forest package for <a href="https://en.wikipedia.org/wiki/R_programming_language" class="mw-redirect" title="R programming language">R</a>)</li>
+<li><cite class="citation conference">Prinzie, Anita; Poel, Dirk (2007). <a rel="nofollow" class="external text" href="http://www.researchgate.net/profile/Dirk_Van_den_Poel/publication/225175169_Random_Multiclass_Classification_Generalizing_Random_Forests_to_Random_MNL_and_Random_NB/links/02e7e5278a0a7b8e7f000000.pdf">"Random Multiclass Classification: Generalizing Random Forests to Random MNL and Random NB"</a> <span style="font-size:85%;">(PDF)</span>. <i>Database and Expert Systems Applications</i>. <a href="https://en.wikipedia.org/wiki/Lecture_Notes_in_Computer_Science" title="Lecture Notes in Computer Science">Lecture Notes in Computer Science</a>. p.&nbsp;349. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1007%2F978-3-540-74469-6_35">10.1007/978-3-540-74469-6_35</a>. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-3-540-74467-2" title="Special:BookSources/978-3-540-74467-2">978-3-540-74467-2</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARandom+forest&amp;rft.atitle=Random+Multiclass+Classification%3A+Generalizing+Random+Forests+to+Random+MNL+and+Random+NB&amp;rft.aufirst=Anita&amp;rft.aulast=Prinzie&amp;rft.au=Poel%2C+Dirk&amp;rft.btitle=Database+and+Expert+Systems+Applications&amp;rft.date=2007&amp;rft.genre=conference&amp;rft_id=http%3A%2F%2Fwww.researchgate.net%2Fprofile%2FDirk_Van_den_Poel%2Fpublication%2F225175169_Random_Multiclass_Classification_Generalizing_Random_Forests_to_Random_MNL_and_Random_NB%2Flinks%2F02e7e5278a0a7b8e7f000000.pdf&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-540-74469-6_35&amp;rft.isbn=978-3-540-74467-2&amp;rft.pages=349&amp;rft.series=Lecture+Notes+in+Computer+Science&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+</ul>
+
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1363880-0!*!0!!en!4!*!math=5 and timestamp 20161011170302 and revision id 736931864
+ -->
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.log.warn("Gadget \"teahouse\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");mw.log.warn("Gadget \"ReferenceTooltips\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");mw.log.warn("Gadget \"featured-articles-links\" styles loaded twice. Migrate to type=general. See \u003Chttps://phabricator.wikimedia.org/T42284\u003E.");});</script><noscript>&lt;img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /&gt;</noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;oldid=736931864">https://en.wikipedia.org/w/index.php?title=Random_forest&amp;oldid=736931864</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Classification_algorithms" title="Category:Classification algorithms">Classification algorithms</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Ensemble_learning" title="Category:Ensemble learning">Ensemble learning</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Decision_trees" title="Category:Decision trees">Decision trees</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:CS1_maint:_Uses_authors_parameter" title="Category:CS1 maint: Uses authors parameter">CS1 maint: Uses authors parameter</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_to_be_merged_from_May_2015" title="Category:Articles to be merged from May 2015">Articles to be merged from May 2015</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_articles_to_be_merged" title="Category:All articles to be merged">All articles to be merged</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [alt-shift-n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [alt-shift-y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Random+forest" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Random+forest" title="You&#39;re encouraged to log in; however, it&#39;s not mandatory. [alt-shift-o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/Random_forest" title="View the content page [alt-shift-c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Random_forest" title="Discussion about the content page [alt-shift-t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="https://en.wikipedia.org/wiki/Random_forest#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/Random_forest">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=edit" title="Edit this page [alt-shift-e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="https://en.wikipedia.org/wiki/Random_forest#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://en.wikipedia.org/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Wikipedia [alt-shift-f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Random_forest" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Random_forest" rel="nofollow" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;oldid=736931864" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q245748" title="Link to connected data repository item [alt-shift-g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Random_forest&amp;id=736931864" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Random+forest">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Random+forest&amp;returnto=Random+forest&amp;oldid=736931864&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Random_forest&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="Language settings" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/N%C3%A1hodn%C3%BD_les" title="Náhodný les – Czech" lang="cs" hreflang="cs" class="interlanguage-link-target">Čeština</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Random_Forest" title="Random Forest – German" lang="de" hreflang="de" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/Random_forest" title="Random forest – Spanish" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/For%C3%AAt_d%27arbres_d%C3%A9cisionnels" title="Forêt d&#39;arbres décisionnels – French" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/%EB%9E%9C%EB%8D%A4_%ED%8F%AC%EB%A0%88%EC%8A%A4%ED%8A%B8" title="랜덤 포레스트 – Korean" lang="ko" hreflang="ko" class="interlanguage-link-target">한국어</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/Foresta_casuale" title="Foresta casuale – Italian" lang="it" hreflang="it" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E3%83%95%E3%82%A9%E3%83%AC%E3%82%B9%E3%83%88" title="ランダムフォレスト – Japanese" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/Random_forest" title="Random forest – Russian" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-simple"><a href="https://simple.wikipedia.org/wiki/Random_forest" title="Random forest – Simple English" lang="simple" hreflang="simple" class="interlanguage-link-target">Simple English</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/Random_forest" title="Random forest – Ukrainian" lang="uk" hreflang="uk" class="interlanguage-link-target">Українська</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97" title="随机森林 – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target">中文</a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q245748#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 30 August 2016, at 19:23.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Random_forest&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="./EL14_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="./EL14_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.load(["ext.cite.a11y","ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.centralNotice.geoIP","ext.centralNotice.startUp"]);});</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set( {
+    "wgPageParseReport": {
+        "limitreport": {
+            "cputime": "0.336",
+            "walltime": "0.471",
+            "ppvisitednodes": {
+                "value": 1979,
+                "limit": 1000000
+            },
+            "ppgeneratednodes": {
+                "value": 0,
+                "limit": 1500000
+            },
+            "postexpandincludesize": {
+                "value": 73109,
+                "limit": 2097152
+            },
+            "templateargumentsize": {
+                "value": 1201,
+                "limit": 2097152
+            },
+            "expansiondepth": {
+                "value": 12,
+                "limit": 40
+            },
+            "expensivefunctioncount": {
+                "value": 1,
+                "limit": 500
+            },
+            "entityaccesscount": {
+                "value": 0,
+                "limit": 400
+            },
+            "timingprofile": [
+                "100.00%  310.000      1 -total",
+                " 55.37%  171.649      1 Template:Reflist",
+                " 22.36%   69.327     15 Template:Cite_journal",
+                " 13.58%   42.101      1 Template:Merge_from",
+                " 12.92%   40.067      3 Template:Cite_conference",
+                "  9.16%   28.393      1 Template:Machine_learning_bar",
+                "  8.37%   25.936      1 Template:Sidebar_with_collapsible_lists",
+                "  8.09%   25.072      1 Template:Mbox",
+                "  5.88%   18.243      1 Template:About",
+                "  3.44%   10.660      1 Template:Portal-inline"
+            ]
+        },
+        "scribunto": {
+            "limitreport-timeusage": {
+                "value": "0.135",
+                "limit": "10.000"
+            },
+            "limitreport-memusage": {
+                "value": 5379973,
+                "limit": 52428800
+            }
+        },
+        "cachereport": {
+            "origin": "mw1171",
+            "timestamp": "20161011170302",
+            "ttl": 2592000,
+            "transientcontent": false
+        }
+    }
+} );});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":73,"wgHostname":"mw1181"});});</script>
+	
+
+<div class="suggestions" style="display: none; font-size: 13px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
