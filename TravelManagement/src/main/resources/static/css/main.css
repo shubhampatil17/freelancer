@@ -1,0 +1,52 @@
+.headerNav .navbar-default {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.headerNav .navbar-header a {
+    color: white;
+}
+
+.headerNav .navbar-header a:hover {
+    color: white;
+}
+
+.headerNav .navbar {
+    border-radius: 0px;
+}
+
+.content .tripStats {
+    margin-bottom: 30px;
+}
+
+.addTripBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.mainContent .noTripsFoundMessage {
+    text-align: center;
+    font-size: 30px;
+}
+
+.mainContent .thumbnail .editPanel i {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.mainContent .thumbnail h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mainContent .thumbnail p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.alert {
+    margin-top: 20px;
+}

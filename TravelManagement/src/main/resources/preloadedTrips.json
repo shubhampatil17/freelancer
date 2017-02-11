@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Trip1",
+    "location": "Location1",
+    "startDate": "2017-02-15T00:00:00.000Z",
+    "endDate": "2017-02-18T00:00:00.000Z",
+    "transportation": "Boat"
+  },
+  {
+    "name": "Trip2",
+    "location": "Location2",
+    "startDate": "2017-02-15T00:00:00.000Z",
+    "endDate": "2017-02-18T00:00:00.000Z",
+    "transportation": "Plane"
+  },
+  {
+    "name": "Trip3",
+    "location": "Location3",
+    "startDate": "2017-02-15T00:00:00.000Z",
+    "endDate": "2017-02-18T00:00:00.000Z",
+    "transportation": "Car"
+  }
+]
