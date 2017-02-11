@@ -20,3 +20,6 @@ gradle
 build
 gradlew
 gradle.bat
+
+#macos
+.DS_Store
