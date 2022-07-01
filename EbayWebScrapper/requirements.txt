@@ -21,7 +21,7 @@ mutagen==1.22
 numpy==1.8.2
 oauthlib==0.6.1
 oneconf==0.3.7.14.4.1
-openpyxl==2.4.0
+openpyxl==2.4.2
 PAM==0.4.2
 parsel==1.0.3
 pexpect==3.1
